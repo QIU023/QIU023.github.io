@@ -1,13 +1,13 @@
-baseurl: https://zychimne.github.io
+baseurl: https://qiu023.github.io
 languageCode: en-us
 theme: stack
 paginate: 5
-title: ZYChimne's Website
+title: Yiqiao Qiu's Website
 
 languages:
     en:
         languageName: English
-        title: ZYChimne
+        title: YiqiaoQiu
         weight: 1
     # zh-cn:
     #     languageName: 中文
@@ -15,7 +15,7 @@ languages:
     #     weight: 2
 
 # Change it to your Disqus shortname before using
-disqusShortname: zychimne
+disqusShortname: YiqiaoQiu
 
 # GA Tracking ID
 googleAnalytics:
@@ -192,7 +192,7 @@ menu:
     social:
         - identifier: github
           name: GitHub
-          url: https://github.com/ZYChimne
+          url: https://github.com/QIU023
           params:
               icon: brand-github
 
