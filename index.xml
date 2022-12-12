@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ZYChimne</title><link>https://zychimne.github.io/</link><description>Recent content on ZYChimne</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 11 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zychimne.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>About Me</title><link>https://zychimne.github.io/about-me/</link><pubDate>Sun, 11 Dec 2022 00:00:00 +0000</pubDate><guid>https://zychimne.github.io/about-me/</guid><description>&lt;h1 id="education">Education&lt;/h1>
+&lt;ul>
+&lt;li>Master of Science in Computer Science and Engineering, University of California, San Diego, September 2022-Dec 2023&lt;/li>
+&lt;li>Bachelor of Engineering in Computer Science and Technology, Sun-Yat sen University, September 2018-June 2022&lt;/li>
+&lt;/ul>
+&lt;h1 id="work-experience">Work Experience&lt;/h1>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Video Algorithms Engineer Intern&lt;/strong>, ByteDance, &lt;em>November 2021-April 2022&lt;/em>&lt;/p>
+&lt;ul>
+&lt;li>Built and Optimization of the architecture of DNNs for real-time Video Super-Resolution(SR) and Facial Landmark Detection. Got 43% improvement of the PSNR gain for SR and 67% decreasing for NME loss for Landmark in offline and online testing (SR:2M images, Landmark:100k images).&lt;/li>
+&lt;li>C++ Development of Multi-Frame path in SR node and Landmark Detection node in ByteDance RTC video engine, including using multi-threads concurrency and sharing memory buffers for communication, accelerated Multi-Frame SR processing by 2.3 times faster than trivial ”for-loop”. Together with previous trained DNN models being used in live streaming in Douyin, Tiktok and Lark.&lt;/li>
+&lt;li>Using Android Studio and CMake to compile and run Unit-Tests APP for RTC engine on Android devices.&lt;/li>
+&lt;li>Surveyed and reproduced four baselines for Image Matting.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Computer Vision Research Intern&lt;/strong>, DMAI, &lt;em>July 2021-October 2021&lt;/em>&lt;/p>
+&lt;ul>
+&lt;li>Optimized lite models for Detection &amp;amp; Classification, and OpenSet Recognition applied, optimize test mAP to 99.5% for cards detection, and solve 95% bad cases, achieved 99% test precision for cards classification.&lt;/li>
+&lt;li>Development of a PyTorch based Distributed Generalized Training pipeline(pip install dldtrainer), widely used in DMAI research center to simplify the procedure of developing new DNN models.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h1 id="publications">Publications&lt;/h1>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>SATS: Self-Attention Transfer for Continual Semantic Segmentation&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Under review in Journal: Pattern Recognition as the 1st author, available at &lt;a class="link" href="https://arxiv.org/abs/2203.07667" target="_blank" rel="noopener"
+>arXiv&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;!-- raw HTML omitted -->
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>TDAN: Topic Driven Adaptive Network for Cross-Domain Sentiment Classification&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Published in Journal: Information Processing and Management as the 2nd author, available at &lt;a class="link" href="https://arxiv.org/abs/2111.14094" target="_blank" rel="noopener"
+>arXiv&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;!-- raw HTML omitted -->
+&lt;/li>
+&lt;/ul>
+&lt;h1 id="research-experience">Research Experience&lt;/h1>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Continual Semantic Segmentation&lt;/strong>, SYSU (Advised by Ruixuan Wang), &lt;em>September 2020-May 2022&lt;/em>&lt;/p>
+&lt;ul>
+&lt;li>Explore self-attention mechanism application on Continual Semantic Segmentation, to keep learning new classes and remember old classes, got SOTA result. Paper under review: SATS: Self-Attention Transfer for Continual Semantic Segmentation.&lt;/li>
+&lt;li>Extension of SATS to Classification, Object Detection and Instance Segmentation.&lt;/li>
+&lt;li>Explore how to use continual learning strategy on Segmentation Model to learn the segment of different scenes, in which one class objects belongs to only one scene. Construct related experiments on Medical Decathlon dataset and COCO dataset.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Cross Domain Text Sentiment Classification&lt;/strong>, SYSU (Advised by Yanghui Rao), &lt;em>September 2019-August 2020&lt;/em>&lt;/p>
+&lt;ul>
+&lt;li>Reimplementation results of baselines on Amazon Reviews Dataset.&lt;/li>
+&lt;li>Join the discussion of key innovation of some new method to improve the performance.&lt;/li>
+&lt;li>Paper published: TDAN: Topic Driven Adaptive Network for Cross-Domain Sentiment Classification.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Transductive Ensemble Learning Semantic Segmentation&lt;/strong>, SYSU (Advised by Ruixuan Wang), &lt;em>September 2019-August 2020&lt;/em>&lt;/p>
+&lt;ul>
+&lt;li>Using the ensemble pseudo label of testing set from the previous model to help the semantic segmentation of medical images&lt;/li>
+&lt;li>Explore how the high confidence part of testing set’s pseudo label affects the training of segmentation model&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h1 id="projects">Projects&lt;/h1>
+&lt;h2 id="instant">Instant&lt;/h2>
+&lt;p>Go, Redis, MongoDB, &lt;a class="link" href="https://github.com/QIU023/instant-go" target="_blank" rel="noopener"
+>Github&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>Developing Back-End of the system, including low-level API to execute MongoDB queries/written and high-level API that executes the input command and sends the retrieved data to the front-end using web socket.&lt;/li>
+&lt;li>Implemented a &amp;ldquo;Fan Out on Write&amp;rdquo; inbox using Go, MongoDB to retrieve userfeed, decreasing time to fetch data compared to &amp;ldquo;Fan Out on Read&amp;rdquo;(FOR) by over 3 times. Built hierarchy web session cache system with Redis and MongoDB, decreasing time to fetch data comparing to ”FOR” by over 10 times&lt;/li>
+&lt;/ul>
+&lt;h2 id="operating-system">Operating System&lt;/h2>
+&lt;p>C, C++, x86 assembly, shell, makefile&lt;/p>
+&lt;ul>
+&lt;li>Developing a simple Operating System that can run on a bare virtual machine, including a command shell, boot-sector module, a basic core module, a process scheduling module, and a FAT12 file system.&lt;/li>
+&lt;/ul>
+&lt;h1 id="awards">Awards&lt;/h1>
+&lt;ul>
+&lt;li>Third Prize of Sun Yat-sen University Scholarship (2019, 2020, 2021)&lt;/li>
+&lt;li>Third Prize of Chaoshan Galaxy Award (2018), full marks(150/150) of math in college entrance examination(only two in Guangdong province)&lt;/li>
+&lt;li>First prize of Guangdong Province in the Chinese College Student Mathematics Competition (2019, 2020)&lt;/li>
+&lt;li>Sun Yat-sen University ACM Competition (second prize in 2019, third prize in 2020)&lt;/li>
+&lt;/ul>
+&lt;h1 id="standard-test-scores">Standard Test Scores&lt;/h1>
+&lt;ul>
+&lt;li>&lt;strong>TOEFL: 106&lt;/strong> (Listening: 27, Reading: 29, Writing: 27, Speaking: 23)&lt;/li>
+&lt;li>&lt;strong>GRE: 318&lt;/strong> (Verbal Reasoning: 151, Quantitative Reasoning: 167, Analytical Writing: 3.5)&lt;/li>
+&lt;/ul>
+&lt;h1 id="skills">Skills&lt;/h1>
+&lt;ul>
+&lt;li>&lt;strong>Programing:&lt;/strong> (C/C++, Python, Java, Go, CUDA, shell, SQL, x86 assembly)&lt;/li>
+&lt;li>&lt;strong>Libraries:&lt;/strong> (Pytorch, Tensorflow, Matplotlib, Numpy, Redis, MongoDB, MySQL)&lt;/li>
+&lt;li>&lt;strong>Tools:&lt;/strong> (git, docker, Linux System)&lt;/li>
+&lt;li>&lt;strong>Computer Vision:&lt;/strong> (Semantic Segmentation, Incremental Learning, Super-Resolution, Facial Landmark Detection, Object Detection, Image Classification, Lite Network Optimization)&lt;/li>
+&lt;li>&lt;strong>Natural Language Processing:&lt;/strong> (Sentiment Classification, Cross Domain Transfer Learning, Topic Model, word2vec)&lt;/li>
+&lt;li>&lt;strong>Machine Learning and Artificial Intelligence:&lt;/strong> (Bayesian Learning, Searching, SVM, Logistic Regression, Decision Tree, Gaussian Mixture Model)&lt;/li>
+&lt;li>&lt;strong>Reinforcement Learning:&lt;/strong> (Monto-Carlo Tree Searching, Policy Gradient, Value/Policy Iteration, DQN, Meta-Gradient for hyper-params)&lt;/li>
+&lt;li>&lt;strong>Recommender System:&lt;/strong> (Collabtive Filtering, Latent Factor Modeling SVD, Sentiment Analysis based regression)&lt;/li>
+&lt;/ul></description></item></channel></rss>
