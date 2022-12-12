@@ -5,7 +5,7 @@ View my website on [github.io](https://QIU023.github.io).
 ```bash
 prettier --write ./content
 ``` -->
-
+![](assets/img/yiqiaoqiu-photo.jpg)
 
 # Education
 
@@ -24,6 +24,16 @@ prettier --write ./content
 - **Computer Vision Research Intern**, DMAI, _July 2021-October 2021_
   - Optimized lite models for Detection & Classification, and OpenSet Recognition applied, optimize test mAP to 99.5% for cards detection, and solve 95% bad cases, achieved 99% test precision for cards classification.
   - Development of a PyTorch based Distributed Generalized Training pipeline(pip install dldtrainer), widely used in DMAI research center to simplify the procedure of developing new DNN models.
+
+# Self-Introduction
+
+My name is Yiqiao Qiu, I come from China and I currently enrolled in Master of Science in Computer Science program at University of California, San Diego as a freshman. I graduated from Sun Yat-sen University in China at June 2022, with a Bachelor Degree in Computer Science and Technology. 
+
+I'm very interested in programming, Computer Science, Software Engineering, Computer Vision and Machine Learning. During my undergraduate stage, I have achieved a 91.4 average score and 3.94 GPA in my major courses, rank 10% in all students. I have two internship experience at ByteDance and DMAI, and I have one CV paper as the 1sr author under review in the Journal of Pattern Recognition, available in arXiv, and one NLP paper as the 2nd author published in the Journal of Information Processing and Management.
+
+I've accepted the Software Development Engineer Internship offer from Amazon, and will go to Seattle, WA at June 2023 to begin my internship.
+
+I'm enthusiastic about Software Engineering, Computer System, and Machine Learning and I want to make best usage of my knowledge in these areas to develop more efficient advanced large scale Machine Learning systems.
 
 # Publications
 
