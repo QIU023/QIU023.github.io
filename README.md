@@ -5,7 +5,7 @@ View my website on [github.io](https://QIU023.github.io).
 ```bash
 prettier --write ./content
 ``` -->
-![](assets/img/yiqiaoqiu-photo.jpg,  style="zoom:33%;")
+![](img src = "./assets/img/yiqiaoqiu-photo.jpg",  style="zoom:33%;")
 
 # Education
 
