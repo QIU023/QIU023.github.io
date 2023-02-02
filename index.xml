@@ -27,7 +27,7 @@
 &lt;li>
 &lt;p>&lt;strong>SATS: Self-Attention Transfer for Continual Semantic Segmentation&lt;/strong>&lt;/p>
 &lt;ul>
-&lt;li>Under review in Journal: Pattern Recognition as the 1st author, available at &lt;a class="link" href="https://arxiv.org/abs/2203.07667" target="_blank" rel="noopener"
+&lt;li>Published in Journal: Pattern Recognition, as the 1st author, available at &lt;a class="link" href="https://arxiv.org/abs/2203.07667" target="_blank" rel="noopener"
 >arXiv&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;!-- raw HTML omitted -->
@@ -46,7 +46,7 @@
 &lt;li>
 &lt;p>&lt;strong>Continual Semantic Segmentation&lt;/strong>, SYSU (Advised by Ruixuan Wang), &lt;em>September 2020-May 2022&lt;/em>&lt;/p>
 &lt;ul>
-&lt;li>Explore self-attention mechanism application on Continual Semantic Segmentation, to keep learning new classes and remember old classes, got SOTA result. Paper under review: SATS: Self-Attention Transfer for Continual Semantic Segmentation.&lt;/li>
+&lt;li>Explore self-attention mechanism application on Continual Semantic Segmentation, to keep learning new classes and remember old classes, got SOTA result. Paper published in Journal: Pattern Recognition, SATS: Self-Attention Transfer for Continual Semantic Segmentation.&lt;/li>
 &lt;li>Extension of SATS to Classification, Object Detection and Instance Segmentation.&lt;/li>
 &lt;li>Explore how to use continual learning strategy on Segmentation Model to learn the segment of different scenes, in which one class objects belongs to only one scene. Construct related experiments on Medical Decathlon dataset and COCO dataset.&lt;/li>
 &lt;/ul>
@@ -56,7 +56,7 @@
 &lt;ul>
 &lt;li>Reimplementation results of baselines on Amazon Reviews Dataset.&lt;/li>
 &lt;li>Join the discussion of key innovation of some new method to improve the performance.&lt;/li>
-&lt;li>Paper published: TDAN: Topic Driven Adaptive Network for Cross-Domain Sentiment Classification.&lt;/li>
+&lt;li>Paper published in Journal: Information Processing and Management, TDAN: Topic Driven Adaptive Network for Cross-Domain Sentiment Classification.&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>
@@ -68,6 +68,15 @@
 &lt;/li>
 &lt;/ul>
 &lt;h1 id="projects">Projects&lt;/h1>
+&lt;h2 id="distributed-file-system">Distributed File System&lt;/h2>
+&lt;p>Python, Redis, gRPC, sqlite3, &lt;a class="link" href="https://github.com/QIU023/Distributed_File_System" target="_blank" rel="noopener"
+>Github&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>Implemented PAXOS distributed system consistency algorithm: sending proposals and file contents and checking timestamps and status of all responses among multiple servers to synchronize files through the gRPC framework.&lt;/li>
+&lt;li>Build client local file cache system using Redis and Two-Queue (FIFO and LRU queue).&lt;/li>
+&lt;li>Implemented the Load Balancing/Traffic Management algorithm with the information of the &amp;lsquo;ping&amp;rsquo; time delay, the number of hoops from the client to all file servers, and access frequency of each server to confirm the optimal server for each client access.&lt;/li>
+&lt;li>Implemented parallel Read/Write access control for the same file through locks on sqlite database.&lt;/li>
+&lt;/ul>
 &lt;h2 id="instant">Instant&lt;/h2>
 &lt;p>Go, Redis, MongoDB, &lt;a class="link" href="https://github.com/QIU023/instant-go" target="_blank" rel="noopener"
 >Github&lt;/a>&lt;/p>
