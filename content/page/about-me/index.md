@@ -31,30 +31,38 @@ menu:
 # Publications
 
 - **SATS: Self-Attention Transfer for Continual Semantic Segmentation**
-  - Under review in Journal: Pattern Recognition as the 1st author, available at [arXiv](https://arxiv.org/abs/2203.07667). 
+  - Published in Journal: Pattern Recognition, as the 1st author, available at [arXiv](https://arxiv.org/abs/2203.07667). 
   <!-- - Explore self-attention mechanism application on Continual Semantic Segmentation, to keep learning new classes and remember old classes, got SOTA result.   -->
   
 - **TDAN: Topic Driven Adaptive Network for Cross-Domain Sentiment Classification**
-  - Published in Journal: Information Processing and Management as the 2nd author, available at [arXiv](https://arxiv.org/abs/2111.14094). 
+  - Published in Journal: Information Processing and Management, as the 2nd author, available at [arXiv](https://www.sciencedirect.com/science/article/abs/pii/S0306457322003314?via%3Dihub). 
   <!-- - Reproduce code of four baselines for cross-domain text sentiment classification on Reviews Dataset. -->
 
 # Research Experience
 
 - **Continual Semantic Segmentation**, SYSU (Advised by Ruixuan Wang), _September 2020-May 2022_
-  -  Explore self-attention mechanism application on Continual Semantic Segmentation, to keep learning new classes and remember old classes, got SOTA result. Paper under review: SATS: Self-Attention Transfer for Continual Semantic Segmentation.
+  -  Explore self-attention mechanism application on Continual Semantic Segmentation, to keep learning new classes and remember old classes, got SOTA result. Paper published in Journal: Pattern Recognition, SATS: Self-Attention Transfer for Continual Semantic Segmentation.
   -  Extension of SATS to Classification, Object Detection and Instance Segmentation.
   -  Explore how to use continual learning strategy on Segmentation Model to learn the segment of different scenes, in which one class objects belongs to only one scene. Construct related experiments on Medical Decathlon dataset and COCO dataset.
 
 - **Cross Domain Text Sentiment Classification**, SYSU (Advised by Yanghui Rao), _September 2019-August 2020_
   - Reimplementation results of baselines on Amazon Reviews Dataset.
   - Join the discussion of key innovation of some new method to improve the performance.
-  - Paper published: TDAN: Topic Driven Adaptive Network for Cross-Domain Sentiment Classification.
+  - Paper published in Journal: Information Processing and Management, TDAN: Topic Driven Adaptive Network for Cross-Domain Sentiment Classification.
 
 - **Transductive Ensemble Learning Semantic Segmentation**, SYSU (Advised by Ruixuan Wang), _September 2019-August 2020_
   - Using the ensemble pseudo label of testing set from the previous model to help the semantic segmentation of medical images  
   - Explore how the high confidence part of testing set’s pseudo label affects the training of segmentation model
 
 # Projects
+
+## Distributed File System
+
+Python, Redis, gRPC, sqlite3, [Github](https://github.com/QIU023/Distributed_File_System)
+- Implemented PAXOS distributed system consistency algorithm: sending proposals and file contents and checking timestamps and status of all responses among multiple servers to synchronize files through the gRPC framework.
+- Build client local file cache system using Redis and Two-Queue (FIFO and LRU queue). 
+- Implemented the Load Balancing/Traffic Management algorithm with the information of the 'ping' time delay, the number of hoops from the client to all file servers, and access frequency of each server to confirm the optimal server for each client access.
+- Implemented parallel Read/Write access control for the same file through locks on sqlite database.
 
 ## Instant 
 
