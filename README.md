@@ -63,6 +63,14 @@ I'm enthusiastic about Software Engineering, Computer System, and Machine Learni
 
 # Projects
 
+## Distributed File System
+
+Python, Redis, gRPC, sqlite3, [Github](https://github.com/QIU023/Distributed_File_System)
+- Implemented PAXOS distributed system consistency algorithm: sending proposals and file contents and checking timestamps and status of all responses among multiple servers to synchronize files through the gRPC framework.
+- Build client local file cache system using Redis and Two-Queue (FIFO and LRU queue). 
+- Implemented the Load Balancing/Traffic Management algorithm with the information of the 'ping' time delay, the number of hoops from the client to all file servers, and access frequency of each server to confirm the optimal server for each client access.
+- Implemented parallel Read/Write access control for the same file through locks on sqlite database.
+
 ## Instant 
 
 Go, Redis, MongoDB, [Github](https://github.com/QIU023/instant-go)
