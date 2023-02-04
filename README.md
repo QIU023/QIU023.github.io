@@ -38,11 +38,11 @@ I'm enthusiastic about Software Engineering, Computer System, and Machine Learni
 # Publications
 
 - **SATS: Self-Attention Transfer for Continual Semantic Segmentation**
-  - Under review in Journal: Pattern Recognition as the 1st author, available at [arXiv](https://arxiv.org/abs/2203.07667). 
+  - Published in Journal: Pattern Recognition as the 1st author, available at [ScienceDirect](https://www.sciencedirect.com/science/article/pii/S0031320323000845?via%3Dihub).
   <!-- - Explore self-attention mechanism application on Continual Semantic Segmentation, to keep learning new classes and remember old classes, got SOTA result.   -->
   
 - **TDAN: Topic Driven Adaptive Network for Cross-Domain Sentiment Classification**
-  - Published in Journal: Information Processing and Management as the 2nd author, available at [arXiv](https://arxiv.org/abs/2111.14094). 
+  - Published in Journal: Information Processing and Management as the 2nd author, available at [ScienceDirect](https://www.sciencedirect.com/science/article/abs/pii/S0306457322003314?via%3Dihub). 
   <!-- - Reproduce code of four baselines for cross-domain text sentiment classification on Reviews Dataset. -->
 
 # Research Experience
