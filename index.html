@@ -30,7 +30,7 @@
     </p>
     <p class="sub">
       Currently <strong>Software Engineer at AWS</strong> (DC Network Infra, SIDR). Previously at <strong>XPeng Motors</strong>, <strong>ByteDance</strong>, and <strong>Amazon CloudFront</strong>.
-      UCSD MS CSE, GPA 3.93. <strong>7 publications · 112 citations · h-index 4.</strong>
+      UCSD MS CSE, GPA 3.93. <strong>7 publications · 112 citations.</strong>
     </p>
 
     <div class="cta">
@@ -66,113 +66,230 @@
   <p class="prose">
     I work across two tracks that increasingly feed into each other:
     <strong>massive-scale distributed systems &amp; networking infrastructure</strong>,
-    and <strong>efficient computer-vision / ML model optimization, research, and training-system engineering</strong>.
+    and <strong>efficient computer-vision / multi-modal-LLM model optimization, research, and training-system engineering</strong>.
     The common thread is pushing real production systems — routing control planes, perception models, VLMs —
     to be faster, leaner, and more reliable under real-world fault and resource constraints.
   </p>
 
-  <h3 class="about-subhead">Distributed systems &amp; networking infrastructure</h3>
+  <h3 class="about-subhead">Distributed systems &amp; networking infrastructure — SIDR</h3>
   <p class="prose">
-    I currently build <strong>SIDR</strong> — AWS's <em>Scalable Intent-Driven Routing</em> protocol,
-    the control plane behind AWS Datacenter network fabrics. In <strong>Rust / Tokio</strong> I've delivered two
-    core SIDR features end-to-end:
+    I currently build <strong>SIDR</strong> — AWS's <em>Scalable Intent-Driven Routing</em> protocol and the
+    routing control plane for AWS Datacenter network fabrics (a production fleet of
+    <strong>7,000+ switch nodes</strong>). Under SIDR, routing intent is expressed centrally and distributed /
+    installed across the fleet via <strong>multi-phase commit (MPC) transactions</strong>, which makes
+    correctness, failure-mode reasoning, and fleet-scale operational behavior the central engineering problem
+    of the system. My work spans feature development, production operation of the control plane, and
+    debugging MPC race conditions under real datacenter link and process failures.
+  </p>
+  <p class="prose">Three headline contributions:</p>
+  <ol class="prose-list">
+    <li>
+      <strong>Automated release-qualification framework with chaos fault injection.</strong>
+      Designed and built the complete end-to-end automated release-qualification framework for SIDR, run
+      against test clusters: a <strong>hierarchical concurrent workflow engine</strong> orchestrating
+      multi-stage qualification runs, comprehensive <strong>protocol state tracing</strong>, and a
+      <strong>chaos fault-injection system</strong> that systematically exercises partitions, device
+      failures, and interface flaps to validate consensus convergence and MPC operation correctness — with
+      rollback — under extreme stress and chaotic network / software failure conditions. Integrated into
+      CI/CD; delivered a <strong>15× speedup</strong> in release qualification.
+      <strong>Since October 2024, every AWS ML Datacenter switch NetOS release has been qualified and gated
+      by this framework</strong> — it has <strong>caught dozens of latent bugs</strong> both inside the SIDR
+      protocol itself and at the interaction boundary between SIDR and other AWS NetOS processes before they
+      could reach production, keeping every subsequent SIDR release highly reliable at production fleet scale.
+    </li>
+    <li>
+      <strong>Core SIDR feature development.</strong>
+      <ul class="prose-sublist">
+        <li>
+          <em>SIDR route redistribution from Quagga.</em> Cross-protocol route redistribution bridges legacy
+          BGP / OSPF state (Quagga zebra) into SIDR's intent-driven route programming. Owned the SIDR-side
+          daemon logic end-to-end: inter-process communication with Quagga, asynchronous message-stream
+          parsing, <strong>multi-module async orchestration</strong> keeping redistribution off the critical
+          path of intent commits, OS-level signaling, and <strong>MPC lazy-initialization</strong>
+          optimizations across multiple SIDR modules.
+        </li>
+        <li>
+          <em>SIDR protocol credential management and security enhancement.</em> Added
+          <strong>message-certificate-based authentication and verification</strong> end-to-end across
+          controller-to-daemon intent distribution. Designed certificate issuance / rotation into SIDR's
+          service-fabric workflows, explicit race-condition and failure handling during certificate
+          transitions, and a comprehensive end-to-end integration-test suite covering controller-to-daemon
+          intent signaling and protocol state-machine transitions. A cross-cutting change — every SIDR
+          message touched — so backward-compatible rollout mattered as much as the cryptographic component.
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>Deep system understanding from feature development, production operation, and debugging.</strong>
+      Shipping SIDR features is one input; running the control plane in production and diagnosing the many
+      race conditions that surface when MPC transactions interleave with real link and process failures —
+      device crashes mid-commit, interface flaps, partial commits, rollback-vs-recommit interleavings — is
+      another. The combination built a depth of understanding across <strong>protocol design, state-machine
+      semantics, fault tolerance, and the operational realities of a very large distributed fabric</strong>
+      that neither feature work nor operational experience alone produces.
+    </li>
+  </ol>
+  <p class="prose">
+    The foundations are <strong>CAP-theorem reasoning, multi-phase commit semantics, protocol fault tolerance,
+    and inter-node communication-cost optimization inside massive fabrics</strong>.
+  </p>
+
+  <h3 class="about-subhead">Computer Vision &amp; Multi-Modal LLMs — from efficient vision models to VLM infrastructure</h3>
+  <p class="prose">
+    My ML work tells one story: <strong>take the efficient-model mindset — latency, memory, throughput — from
+    classical CV into modern VLMs and the training systems beneath them.</strong>
+  </p>
+
+  <p class="prose">
+    <strong>Industrial efficient-model work.</strong> Across three internships I shipped production CV models
+    covering the core task families — <strong>semantic segmentation, object detection, super-resolution,
+    facial-landmark detection, image classification, and video classification</strong> — under strict
+    latency / compute budgets.
   </p>
   <ul class="prose-list">
     <li>
-      <strong>SIDR route redistribution</strong> from Quagga — inter-process communication, asynchronous
-      message-stream parsing, multi-module async orchestration, OS-level signaling, and message-generation /
-      MPC lazy-init optimizations across several SIDR modules.
+      <strong>XPeng Motors — Autonomous Driving Center.</strong>
+      <em class="stack-meta">Python, PyTorch, NVIDIA DALI, ONNX &middot; Oct 2023 – Mar 2024.</em>
+      <ul class="prose-sublist">
+        <li>
+          <em>Training-pipeline acceleration for large-scale perception models.</em> Accelerated on-car
+          perception training by integrating <strong>NVIDIA DALI</strong> for GPU-based online augmentation
+          on huge-scale image datasets, offloading preprocessing from CPU to GPU via multi-process pipelines —
+          <strong>7× training speedup and 80% CPU reduction</strong>, unblocking faster iteration across
+          perception teams.
+        </li>
+        <li>
+          <em>Multi-task backbone consolidation for on-car deployment.</em> Merged multiple task-specific
+          perception models into a unified shared backbone; systematically explored trade-offs across
+          architectures, FLOPs, and cross-task generalization. Reduced on-car model scheduling and memory
+          overhead while preserving per-task accuracy, improving deployment efficiency on resource-constrained
+          automotive compute.
+        </li>
+        <li>
+          <em>Eye-action video classification for the Driver Monitoring System (DMS).</em> Owned end-to-end
+          development of the eye-action recognition pipeline for in-cabin fatigue and distraction detection —
+          dataset construction, temporal model design and training, and in-vehicle real-scene validation
+          under varied lighting and head poses. <strong>99.64% binary classification accuracy with 30%
+          inference-latency reduction</strong>, meeting the real-time on-car constraint.
+        </li>
+        <li>
+          <em>Simulation-driven data augmentation for long-tail object detection.</em> Replenished an
+          object-detection dataset with photorealistic simulation data for rare / long-tail categories;
+          validated the pipeline by training YOLO-X on the augmented dataset and demonstrating consistent
+          mAP gains on underrepresented classes. Co-author of <em>Anything in Any Scene</em>.
+        </li>
+      </ul>
     </li>
     <li>
-      <strong>SIDR protocol credential management system</strong> — message-certificate authentication and
-      verification, with thorough design for service-fabric workflows, explicit race-condition / failure
-      handling, and end-to-end integration tests spanning controller-to-daemon intent distribution,
-      system-level signaling, and protocol state-machine transitions.
+      <strong>ByteDance — Real-Time Communication, Video Group.</strong>
+      <em class="stack-meta">Python, PyTorch &middot; Nov 2021 – Apr 2022.</em>
+      <ul class="prose-sublist">
+        <li>
+          <em>Real-time multi-frame super-resolution for live-streaming codec enhancement.</em> Proposed novel
+          auxiliary modules at the low-level encoder / decoder of a real-time multi-frame super-resolution
+          model, leveraging <strong>temporal consistency across adjacent frames</strong> and
+          <strong>residual-aware feature fusion</strong> to alleviate video-decoding blocky artifacts from
+          aggressive compression — without inflating inference latency. <strong>43% PSNR gain improvement</strong>
+          in offline testing; deployed into the TikTok live-streaming RTC video engine.
+        </li>
+        <li>
+          <em>Robust facial-landmark detection for ROI-aware bitrate allocation.</em> Optimized the landmark
+          model driving ROI-based bitrate allocation on streamers' faces via (1) <strong>facial-parsing
+          preprocessing</strong> for semantic priors, (2) <strong>weighted loss with balanced resampling</strong>
+          for long-tail poses / occlusions, and (3) an <strong>auxiliary global-context branch</strong>
+          stabilizing predictions under occlusion and motion blur. <strong>67% NME reduction</strong>;
+          unstructured pruning further cut inference time by <strong>20%</strong> to fit the RTC latency budget.
+        </li>
+        <li>
+          <em>Training infrastructure.</em> Built <strong>FFmpeg-based offline augmentation</strong> simulating
+          codec artifacts, bitrate ladders, and frame-drop patterns, plus a <strong>multi-threaded concurrent
+          I/O queue</strong> hiding I/O latency behind GPU compute — <strong>40% training-time reduction</strong>
+          on large-scale video datasets.
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>DMAI — Research Center.</strong>
+      <em class="stack-meta">Python, PyTorch &middot; Jul 2021 – Oct 2021.</em>
+      Benchmarked and optimized lightweight object detectors (<strong>RFB, YOLO-X, YOLO-v5</strong>) with
+      data-augmentation search and loss tuning to suppress false positives (<strong>99.5% mAP</strong>);
+      improved classification with <strong>open-set loss</strong> to resolve <strong>95% of edge-case
+      failures at 99% precision</strong>.
     </li>
   </ul>
-  <p class="prose">
-    In <strong>Python</strong>, I designed and built the complete release-qualification ecosystem for AWS
-    DC Networking fabric devices: a <strong>hierarchical concurrent workflow engine</strong>,
-    comprehensive protocol state tracing, and a complex <strong>chaos-testing system</strong> that
-    injects partitions, device failures, and interface flaps to validate consensus convergence and MPC operation
-    correctness — with rollback — under extreme stress and chaotic network / software failure conditions.
-    The framework is integrated into CI/CD and delivered a <strong>15× speedup</strong> in release qualification,
-    qualifying every subsequent SIDR production release.
-  </p>
-  <p class="prose">
-    This builds on a prior internship at <strong>AWS CloudFront</strong>, where I shipped CF2 Tagging in the
-    CloudFront control plane — distributed transactions backed by DynamoDB distributed locks, thorough
-    race-condition handling, a 25% latency cut on 3 customer APIs, and a 60× speedup in cleaner throughput.
-    My grounding is in SDN, BGP / Quagga zebra, TCP/UDP, CAP, multi-phase commit, and async protocol design.
-  </p>
 
-  <h3 class="about-subhead">Efficient CV / ML: industrial model optimization and deployment</h3>
   <p class="prose">
-    Before AWS, I focused on <strong>efficient CV model optimization and deployment</strong> in two industry settings:
+    <strong>Research.</strong> <strong>7 publications · 112 citations</strong>, spanning
+    <strong>semantic segmentation, knowledge-distillation-based continual learning, classification,
+    out-of-distribution detection, and transfer learning</strong>. Selected top-cited contributions:
   </p>
   <ul class="prose-list">
     <li>
-      <strong>XPeng Motors — Autonomous Driving Center.</strong> Accelerated on-car perception training with
-      NVIDIA DALI (7× speedup, 80% CPU reduction); consolidated multi-task perception backbones for on-car
-      deployment; owned end-to-end the <em>Eye-Action video classification</em> pipeline for the Driver Monitoring
-      System (99.64% accuracy, 30% inference-latency reduction); seeded long-tail object detection with
-      photorealistic simulation data — work that became the <em>Anything in Any Scene</em> co-authorship.
+      <em>SATS: Self-Attention Transfer for Continual Semantic Segmentation.</em> 1st author.
+      <em>Pattern Recognition</em>, 2023 · <span class="cite">53 citations</span>.
+      Continual semantic segmentation suffers from catastrophic forgetting when a model is incrementally
+      trained on new classes while retaining old ones. SATS introduces a lightweight <strong>self-attention
+      transfer</strong> scheme that distills the <strong>inter-patch relationship structure</strong> from
+      the old model's self-attention maps to the new model during incremental steps — transferring <em>how</em>
+      the visual encoder attends between patches, not just what features it produces. The technique is a
+      plug-in for any vision-transformer-based backbone, sets state of the art on standard continual-segmentation
+      benchmarks, and is the method I'm now extending from CNN-era continual segmentation into modern VLM
+      distillation.
     </li>
     <li>
-      <strong>ByteDance — Real-Time Communication, Video Group.</strong> Shipped a real-time multi-frame
-      Super-Resolution model into TikTok livestreaming (43% PSNR gain), optimized the facial-landmark model
-      driving ROI-aware bitrate allocation (67% NME reduction, -20% inference time via unstructured pruning),
-      and rebuilt the training data pipeline with FFmpeg-based augmentation and a multi-threaded concurrent
-      I/O queue — 40% training-time reduction on massive video datasets.
+      <em>Classifier-head Informed Feature Masking and Prototype-based Logit Smoothing for Out-of-Distribution
+      Detection.</em> 2nd author. <em>IEEE TCSVT</em>, 2024 · <span class="cite">23 citations</span>.
+      Post-hoc OOD detection combining <strong>classifier-head-informed feature masking</strong>
+      (classifier-head weights mask activations not tied to any in-distribution class) with
+      <strong>prototype-based logit smoothing</strong> (class prototypes regularize logits for off-manifold
+      samples).
+    </li>
+    <li>
+      <em>Topic Driven Adaptive Network for Cross-Domain Sentiment Classification (TDAN).</em> 2nd author.
+      <em>Information Processing and Management</em>, 2023 · <span class="cite">23 citations</span>.
+      Cross-domain sentiment classification via a <strong>neural topic model</strong> plus a
+      <strong>keyword branch</strong>, fused by <strong>cross dot-product attention</strong> between topic
+      and keyword representations — grounding predictions in keyword-occurrence signals that transfer across
+      source and target domains.
     </li>
   </ul>
 
-  <h3 class="about-subhead">Research: continual learning, distillation, OOD detection</h3>
   <p class="prose">
-    My academic work is <strong>7 publications · 112 citations · h-index 4</strong>, centered on
-    <strong>continual learning, knowledge distillation, and out-of-distribution detection</strong> for visual
-    recognition. My 1st-author paper <em>SATS: Self-Attention Transfer for Continual Semantic Segmentation</em>
-    (Pattern Recognition, 53 citations) introduced visual-patch-relationship self-attention distillation as a
-    plug-in technique for any transformer-based visual encoder — a method I'm now extending from CNN-era
-    continual segmentation into modern VLM distillation.
+    <strong>VLM — fine-tuning, token compression, on-device deployment.</strong> Distilling
+    <strong>Qwen2.5-VL 32B → 3B</strong> with LoRA rank-16 on DriveLM-nuScenes; integrated four visual-token
+    compression methods (FasterVLM, PruMerge, PyramidDrop, and my own <strong>SATS-CRP</strong> — region-aware
+    self-attention transfer). 4× token reduction (480 → 120) with DriveLM LoRA accuracy <em>+1%</em>;
+    16× extreme compression at only 2.4% degradation; BF16 → GGUF Q4_K_M quantization (3.9× smaller) deployed
+    on a consumer RTX 4070 Ti via llama.cpp at <strong>170 tokens/s, 142 ms TTFT</strong>.
   </p>
 
-  <h3 class="about-subhead">Current research &amp; training-system projects</h3>
   <p class="prose">
-    Three threads where the two tracks meet — ML research that demands systems engineering:
+    <strong>ML Infra — Pipeline Parallelism on torchtitan.</strong> My fork of PyTorch
+    <code>torchtitan</code> (<a href="https://github.com/QIU023/torchtitan/tree/309b462c48c5549f6f1646611ac6804f49a0d7ce" target="_blank" rel="noopener">branch 309b462</a>)
+    implements a <strong>Block Attention Residuals</strong> experiment composed with <strong>FSDP2 + multi-stage
+    pipeline parallelism</strong> (PP=4 + cache adapter smoke-green), an AttnRes subclass with a scaling-law
+    config registry, silent-grad-loss detection with clone-on-capture, exhaustive <code>init_weights</code>
+    paths for the FSDP2 <code>to_empty</code> flow, a <code>grouped_mm</code> + <code>torch.compile</code>
+    throughput path, and a <strong>LLaVA-style multimodal scaffolding</strong> on top of a Kimi Linear
+    (KDA / MLA / MLP) base.
   </p>
-  <ul class="prose-list">
-    <li>
-      <strong>Efficient VLM — training, distillation, token compression, deployment.</strong> Distilling
-      Qwen2.5-VL 32B → 3B with LoRA rank-16 on DriveLM-nuScenes, combined with four visual-token compression
-      methods (FasterVLM, PruMerge, PyramidDrop, and my own <strong>SATS-CRP</strong> — region-aware
-      self-attention transfer). 4× token reduction (480 → 120) with DriveLM LoRA accuracy <em>+1%</em>;
-      16× extreme compression at only 2.4% degradation. Quantized BF16 → GGUF Q4_K_M (3.9× smaller) and
-      deployed on a consumer RTX 4070 Ti via llama.cpp at <strong>170 tokens/s, 142 ms TTFT</strong>.
-    </li>
-    <li>
-      <strong>Agentic RAG over SQL + document corpora.</strong> LLM orchestrator delegating to specialized
-      SQL / document sub-agents via OpenAI-style function calling and a typed <em>Evidence</em> protocol;
-      async sub-agent dispatch with per-agent timeouts and graceful partial-result synthesis; hybrid BM25 +
-      dense retrieval with Reciprocal Rank Fusion over ~900 chunks from 6 SEC 10-K filings; 4-mode eval
-      harness targeting list-coverage silent failures. Full-pass correctness on a 10-question gold-labeled
-      dev set.
-    </li>
-    <li>
-      <strong>torchtitan — Block Attention Residuals with Pipeline Parallelism.</strong> My fork of PyTorch
-      <code>torchtitan</code> (<a href="https://github.com/QIU023/torchtitan/tree/309b462c48c5549f6f1646611ac6804f49a0d7ce" target="_blank" rel="noopener">branch 309b462</a>)
-      implements a <em>Block Attention Residuals</em> experiment composed with FSDP2 and multi-stage
-      pipeline parallelism (PP=4 smoke-green), a PP cache adapter, a scaling-law config registry,
-      silent-grad-loss detection with clone-on-capture, and a multimodal LLaVA-style scaffolding extension
-      on top of a Kimi Linear (KDA / MLA / MLP) base — including a grouped_mm + torch.compile path for
-      throughput.
-    </li>
-  </ul>
+
+  <p class="prose">
+    <strong>Agentic RAG + LLM-agent result evaluation harness.</strong> An agentic RAG system over SQL +
+    document corpora: LLM orchestrator delegating to specialized sub-agents via OpenAI-style function calling
+    and a typed <em>Evidence</em> protocol; async sub-agent dispatch with per-agent timeouts and graceful
+    partial-result synthesis; hybrid BM25 + dense retrieval with Reciprocal Rank Fusion over ~900 chunks from
+    6 SEC 10-K filings; SSE streaming of routing decisions, tool calls, and sub-agent reasoning. Paired with
+    a <strong>4-mode evaluation harness</strong> (fuzzy-numeric / entity-match / LLM-as-judge / deterministic
+    slot-based component recall) that specifically targets list-coverage silent failures invisible to
+    judge-only scoring. Full-pass correctness on a 10-question gold-labeled dev set.
+  </p>
+
   <p class="prose">
     These two tracks converge in the obvious place: real ML systems at scale need both. I'm most effective
-    when I can move across the stack — from a chaos-testing framework that finds consensus bugs under fault
-    injection, down to a training pipeline where a new attention variant has to compose correctly with
-    FSDP2 and pipeline parallelism.
+    when I can move across the stack — from a chaos-tested routing control plane that finds consensus bugs
+    under fault injection, down to a training pipeline where a new attention variant has to compose correctly
+    with FSDP2 and pipeline parallelism.
   </p>
 </section>
 
@@ -245,7 +362,7 @@
 </section>
 
 <section id="publications" class="section">
-  <h2>Selected Publications <span class="muted-small">&mdash; 7 papers · 112 citations · h-index 4 · i10-index 4</span></h2>
+  <h2>Selected Publications <span class="muted-small">&mdash; 7 papers · 112 citations</span></h2>
   <div class="pub-grid">
 
     <div class="pub">
@@ -345,7 +462,7 @@
     </div>
     <div>
       <h4>Distributed Systems &amp; Networking</h4>
-      <p>SDN · BGP · Quagga zebra · TCP/UDP · CAP theorem · multi-phase commit · async protocol design · chaos fault injection · Rust Tokio async · Rust Netlink · gRPC · Docker</p>
+      <p>Large-scale distributed systems — CAP theorem · multi-phase commit · protocol fault tolerance · inter-node communication-cost optimization · SDN · BGP · Quagga zebra · TCP / UDP · Rust Tokio async · Rust Netlink · gRPC · Docker</p>
     </div>
     <div>
       <h4>ML Training Systems &amp; Deployment</h4>
