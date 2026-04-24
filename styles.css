@@ -201,10 +201,49 @@ code, .mono { font-family: 'JetBrains Mono', Menlo, monospace; font-size: 0.9em;
   color: var(--muted);
 }
 .prose {
-  max-width: 720px;
+  max-width: 760px;
   color: var(--muted);
+  margin: 0 0 0.9rem;
 }
 .prose strong { color: var(--text); font-weight: 600; }
+.prose em { color: var(--text); font-style: italic; }
+.prose code {
+  background: var(--code-bg);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  font-size: 0.88em;
+}
+.about-subhead {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 1.6rem 0 0.6rem;
+  letter-spacing: -0.005em;
+  text-transform: none;
+}
+.about-subhead::before {
+  content: "▸ ";
+  color: var(--accent);
+  font-weight: 400;
+}
+.prose-list {
+  max-width: 760px;
+  margin: 0 0 1rem;
+  padding-left: 1.2rem;
+  color: var(--muted);
+}
+.prose-list li {
+  margin-bottom: 0.55rem;
+  line-height: 1.6;
+}
+.prose-list li strong { color: var(--text); font-weight: 600; }
+.prose-list li em { color: var(--text); font-style: italic; }
+.prose-list li code {
+  background: var(--code-bg);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  font-size: 0.88em;
+}
 
 /* ==================== Experience / Education entries ==================== */
 .entry {

@@ -64,11 +64,115 @@
 <section id="about" class="section">
   <h2>About</h2>
   <p class="prose">
-    I build and ship systems across two tracks that increasingly converge: <strong>computer-vision / ML model optimization and deployment</strong>
-    (training-pipeline acceleration, model distillation, VLM compression, on-device inference), and <strong>massive-scale distributed systems</strong>
-    (routing control planes, consensus verification, concurrent workflow engines). My recent work distills Qwen2.5-VL 32B → 3B with LoRA and
-    4× visual-token compression, deployed on consumer GPU at 170 tokens/s. My day job is writing Rust/Tokio to qualify AWS datacenter network fabric releases
-    with chaos fault injection, delivering a 15× speedup.
+    I work across two tracks that increasingly feed into each other:
+    <strong>massive-scale distributed systems &amp; networking infrastructure</strong>,
+    and <strong>efficient computer-vision / ML model optimization, research, and training-system engineering</strong>.
+    The common thread is pushing real production systems — routing control planes, perception models, VLMs —
+    to be faster, leaner, and more reliable under real-world fault and resource constraints.
+  </p>
+
+  <h3 class="about-subhead">Distributed systems &amp; networking infrastructure</h3>
+  <p class="prose">
+    I currently build <strong>SIDR</strong> — AWS's <em>Scalable Intent-Driven Routing</em> protocol,
+    the control plane behind AWS Datacenter network fabrics. In <strong>Rust / Tokio</strong> I've delivered two
+    core SIDR features end-to-end:
+  </p>
+  <ul class="prose-list">
+    <li>
+      <strong>SIDR route redistribution</strong> from Quagga — inter-process communication, asynchronous
+      message-stream parsing, multi-module async orchestration, OS-level signaling, and message-generation /
+      MPC lazy-init optimizations across several SIDR modules.
+    </li>
+    <li>
+      <strong>SIDR protocol credential management system</strong> — message-certificate authentication and
+      verification, with thorough design for service-fabric workflows, explicit race-condition / failure
+      handling, and end-to-end integration tests spanning controller-to-daemon intent distribution,
+      system-level signaling, and protocol state-machine transitions.
+    </li>
+  </ul>
+  <p class="prose">
+    In <strong>Python</strong>, I designed and built the complete release-qualification ecosystem for AWS
+    DC Networking fabric devices: a <strong>hierarchical concurrent workflow engine</strong>,
+    comprehensive protocol state tracing, and a complex <strong>chaos-testing system</strong> that
+    injects partitions, device failures, and interface flaps to validate consensus convergence and MPC operation
+    correctness — with rollback — under extreme stress and chaotic network / software failure conditions.
+    The framework is integrated into CI/CD and delivered a <strong>15× speedup</strong> in release qualification,
+    qualifying every subsequent SIDR production release.
+  </p>
+  <p class="prose">
+    This builds on a prior internship at <strong>AWS CloudFront</strong>, where I shipped CF2 Tagging in the
+    CloudFront control plane — distributed transactions backed by DynamoDB distributed locks, thorough
+    race-condition handling, a 25% latency cut on 3 customer APIs, and a 60× speedup in cleaner throughput.
+    My grounding is in SDN, BGP / Quagga zebra, TCP/UDP, CAP, multi-phase commit, and async protocol design.
+  </p>
+
+  <h3 class="about-subhead">Efficient CV / ML: industrial model optimization and deployment</h3>
+  <p class="prose">
+    Before AWS, I focused on <strong>efficient CV model optimization and deployment</strong> in two industry settings:
+  </p>
+  <ul class="prose-list">
+    <li>
+      <strong>XPeng Motors — Autonomous Driving Center.</strong> Accelerated on-car perception training with
+      NVIDIA DALI (7× speedup, 80% CPU reduction); consolidated multi-task perception backbones for on-car
+      deployment; owned end-to-end the <em>Eye-Action video classification</em> pipeline for the Driver Monitoring
+      System (99.64% accuracy, 30% inference-latency reduction); seeded long-tail object detection with
+      photorealistic simulation data — work that became the <em>Anything in Any Scene</em> co-authorship.
+    </li>
+    <li>
+      <strong>ByteDance — Real-Time Communication, Video Group.</strong> Shipped a real-time multi-frame
+      Super-Resolution model into TikTok livestreaming (43% PSNR gain), optimized the facial-landmark model
+      driving ROI-aware bitrate allocation (67% NME reduction, -20% inference time via unstructured pruning),
+      and rebuilt the training data pipeline with FFmpeg-based augmentation and a multi-threaded concurrent
+      I/O queue — 40% training-time reduction on massive video datasets.
+    </li>
+  </ul>
+
+  <h3 class="about-subhead">Research: continual learning, distillation, OOD detection</h3>
+  <p class="prose">
+    My academic work is <strong>7 publications · 112 citations · h-index 4</strong>, centered on
+    <strong>continual learning, knowledge distillation, and out-of-distribution detection</strong> for visual
+    recognition. My 1st-author paper <em>SATS: Self-Attention Transfer for Continual Semantic Segmentation</em>
+    (Pattern Recognition, 53 citations) introduced visual-patch-relationship self-attention distillation as a
+    plug-in technique for any transformer-based visual encoder — a method I'm now extending from CNN-era
+    continual segmentation into modern VLM distillation.
+  </p>
+
+  <h3 class="about-subhead">Current research &amp; training-system projects</h3>
+  <p class="prose">
+    Three threads where the two tracks meet — ML research that demands systems engineering:
+  </p>
+  <ul class="prose-list">
+    <li>
+      <strong>Efficient VLM — training, distillation, token compression, deployment.</strong> Distilling
+      Qwen2.5-VL 32B → 3B with LoRA rank-16 on DriveLM-nuScenes, combined with four visual-token compression
+      methods (FasterVLM, PruMerge, PyramidDrop, and my own <strong>SATS-CRP</strong> — region-aware
+      self-attention transfer). 4× token reduction (480 → 120) with DriveLM LoRA accuracy <em>+1%</em>;
+      16× extreme compression at only 2.4% degradation. Quantized BF16 → GGUF Q4_K_M (3.9× smaller) and
+      deployed on a consumer RTX 4070 Ti via llama.cpp at <strong>170 tokens/s, 142 ms TTFT</strong>.
+    </li>
+    <li>
+      <strong>Agentic RAG over SQL + document corpora.</strong> LLM orchestrator delegating to specialized
+      SQL / document sub-agents via OpenAI-style function calling and a typed <em>Evidence</em> protocol;
+      async sub-agent dispatch with per-agent timeouts and graceful partial-result synthesis; hybrid BM25 +
+      dense retrieval with Reciprocal Rank Fusion over ~900 chunks from 6 SEC 10-K filings; 4-mode eval
+      harness targeting list-coverage silent failures. Full-pass correctness on a 10-question gold-labeled
+      dev set.
+    </li>
+    <li>
+      <strong>torchtitan — Block Attention Residuals with Pipeline Parallelism.</strong> My fork of PyTorch
+      <code>torchtitan</code> (<a href="https://github.com/QIU023/torchtitan/tree/309b462c48c5549f6f1646611ac6804f49a0d7ce" target="_blank" rel="noopener">branch 309b462</a>)
+      implements a <em>Block Attention Residuals</em> experiment composed with FSDP2 and multi-stage
+      pipeline parallelism (PP=4 smoke-green), a PP cache adapter, a scaling-law config registry,
+      silent-grad-loss detection with clone-on-capture, and a multimodal LLaVA-style scaffolding extension
+      on top of a Kimi Linear (KDA / MLA / MLP) base — including a grouped_mm + torch.compile path for
+      throughput.
+    </li>
+  </ul>
+  <p class="prose">
+    These two tracks converge in the obvious place: real ML systems at scale need both. I'm most effective
+    when I can move across the stack — from a chaos-testing framework that finds consensus bugs under fault
+    injection, down to a training pipeline where a new attention variant has to compose correctly with
+    FSDP2 and pipeline parallelism.
   </p>
 </section>
 
@@ -206,6 +310,17 @@
   </article>
 
   <article class="project">
+    <h3>torchtitan — Block Attention Residuals &amp; Pipeline Parallelism</h3>
+    <p class="project-meta">PyTorch · torchtitan · FSDP2 · Pipeline Parallelism · Kimi Linear · LLaVA &nbsp;·&nbsp; Apr 2026 &ndash; Present &nbsp;·&nbsp; <a href="https://github.com/QIU023/torchtitan/tree/309b462c48c5549f6f1646611ac6804f49a0d7ce" target="_blank" rel="noopener">branch 309b462 ↗</a></p>
+    <ul>
+      <li>Fork of PyTorch <code>torchtitan</code> implementing a <strong>Block Attention Residuals</strong> experiment composed with <strong>FSDP2 and multi-stage pipeline parallelism</strong> — PP=4 + cache adapter smoke-green on 528M / L=16 models.</li>
+      <li>Ported <strong>Kimi Linear</strong> (KDA / MLA / MLP) as the base architecture; added an <em>AttnRes</em> subclass with a scaling-law config registry; wired a <strong>PP cache adapter</strong> through Kimi Linear; and scaffolded a <strong>LLaVA-style multimodal extension</strong> on top.</li>
+      <li>Shipped a <strong>silent-grad-loss detector</strong> with clone-on-capture to surface silently-dropped gradients during distributed training; exhaustive <code>init_weights</code> paths for the FSDP2 <code>to_empty</code> flow.</li>
+      <li>Enabled a <code>grouped_mm</code> + <code>torch.compile</code> throughput path for the Kimi Linear experiments.</li>
+    </ul>
+  </article>
+
+  <article class="project">
     <h3>Agentic RAG System over SQL + Document Corpora</h3>
     <p class="project-meta">Python · LLM Function Calling · asyncio · Hybrid Retrieval (BM25 + Dense) · SSE Streaming &nbsp;·&nbsp; Apr 2026</p>
     <ul>
@@ -230,11 +345,11 @@
     </div>
     <div>
       <h4>Distributed Systems &amp; Networking</h4>
-      <p>SDN · BGP · Quagga zebra · TCP/UDP · CAP theorem · multi-phase commit · Rust Tokio async · Rust Netlink · gRPC · Docker</p>
+      <p>SDN · BGP · Quagga zebra · TCP/UDP · CAP theorem · multi-phase commit · async protocol design · chaos fault injection · Rust Tokio async · Rust Netlink · gRPC · Docker</p>
     </div>
     <div>
-      <h4>Frameworks &amp; Infra</h4>
-      <p>PyTorch · ONNX · NVIDIA DALI · llama.cpp · AWS (DynamoDB, S3, CloudWatch, CloudFront, CloudFormation) · SQL</p>
+      <h4>ML Training Systems &amp; Deployment</h4>
+      <p>PyTorch · torchtitan · FSDP2 · Pipeline Parallelism · LoRA · ONNX · NVIDIA DALI · llama.cpp · GGUF quantization · AWS (DynamoDB, S3, CloudWatch, CloudFront, CloudFormation)</p>
     </div>
     <div>
       <h4>Languages</h4>
