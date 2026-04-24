@@ -303,9 +303,9 @@
     </div>
     <p class="role"><em>AWS DC Network Infra — Scalable Intent-Driven Routing (SIDR)</em> · Rust, Python, Tokio</p>
     <ul>
-      <li>Built an automated release qualification framework with <strong>hierarchical concurrent workflow orchestration</strong> and chaos fault injection (partitions, device failures, interface flaps) for AWS ML fabrics, validating consensus convergence and MPC correctness under extreme stress — <strong>15× release speedup</strong> in CI/CD.</li>
-      <li>Delivered SIDR daemon logic for <strong>cross-protocol route redistribution</strong> from Quagga: IPC, message-stream parsing, multi-module async, OS-signaling, and MPC lazy-init optimization.</li>
-      <li>Delivered SIDR protocol security enhancement — message authentication / verification with race-condition handling and end-to-end integration tests spanning controller-to-daemon intent distribution and protocol state-machine transitions.</li>
+      <li>Designed and built an <strong>end-to-end automated release qualification framework</strong> for SIDR with <strong>hierarchical concurrent workflow engines</strong>, comprehensive protocol state tracing, and <strong>chaos fault injection</strong> (partitions, device failures, interface flaps) to validate consensus convergence and MPC operation correctness with rollback under extreme stress and chaotic network / software failure conditions. Integrated into CI/CD pipeline, achieving <strong>15× speedup in release qualification</strong> and qualifying all subsequent SIDR production releases.</li>
+      <li>Delivered SIDR daemon logic for network <strong>cross-protocol route redistribution</strong>, including inter-process communication, message-stream parsing, multi-module asynchronous programming and OS-signaling, and optimized message generation and <strong>MPC lazy-init</strong> in multiple SIDR modules for improved efficiency.</li>
+      <li>Delivered <strong>SIDR protocol security enhancement</strong> through message authentication and verification mechanisms, with thorough design and implementation for service-fabric workflows, race-condition / failures handling, and comprehensive end-to-end integration tests spanning controller-to-daemon intent distribution, system-level signaling, and protocol state-machine transitions under various network and system conditions.</li>
     </ul>
   </article>
 
