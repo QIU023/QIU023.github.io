@@ -65,11 +65,12 @@
 <section id="about" class="section">
   <h2>About</h2>
   <p class="prose">
-    I work across two tracks that increasingly feed into each other:
-    <strong>massive-scale distributed systems &amp; networking infrastructure</strong>,
-    and <strong>efficient computer-vision / multi-modal-LLM model optimization, research, and training-system engineering</strong>.
-    The common thread is pushing real production systems — routing control planes, perception models, VLMs —
-    to be faster, leaner, and more reliable under real-world fault and resource constraints.
+    My work threads together two layers of the modern AI stack. <strong>On the model layer:</strong>
+    computer-vision and multi-modal-LLM algorithm work across the full industrial lifecycle — model
+    optimization and deployment, research publications, and ML-infrastructure implementation.
+    <strong>Underneath:</strong> the massive-scale distributed networking and routing control plane running
+    AI datacenter clusters — the infrastructure powering every training and inference workload in the modern
+    AI ecosystem.
   </p>
 
   <h3 class="about-subhead">Distributed systems &amp; networking infrastructure — SIDR</h3>
@@ -268,12 +269,11 @@
   <p class="prose">
     <strong>ML Infra — Pipeline Parallelism on torchtitan.</strong> My fork of PyTorch
     <code>torchtitan</code> (<a href="https://github.com/QIU023/torchtitan/tree/309b462c48c5549f6f1646611ac6804f49a0d7ce" target="_blank" rel="noopener">branch 309b462</a>)
-    implements a <strong>Block Attention Residuals</strong> experiment composed with <strong>FSDP2 + multi-stage
+    implements a <strong>Block Attention Residuals</strong> experiment composed with <strong>multi-stage
     pipeline parallelism</strong> (PP=4 + cache adapter smoke-green), an AttnRes subclass with a scaling-law
-    config registry, silent-grad-loss detection with clone-on-capture, exhaustive <code>init_weights</code>
-    paths for the FSDP2 <code>to_empty</code> flow, a <code>grouped_mm</code> + <code>torch.compile</code>
-    throughput path, and a <strong>LLaVA-style multimodal scaffolding</strong> on top of a Kimi Linear
-    (KDA / MLA / MLP) base.
+    config registry, silent-grad-loss detection with clone-on-capture, a <code>grouped_mm</code> +
+    <code>torch.compile</code> throughput path, and a <strong>LLaVA-style multimodal scaffolding</strong>
+    on top of a Kimi Linear (KDA / MLA / MLP) base.
   </p>
 
   <p class="prose">
@@ -291,7 +291,7 @@
     These two tracks converge in the obvious place: real ML systems at scale need both. I'm most effective
     when I can move across the stack — from a chaos-tested routing control plane that finds consensus bugs
     under fault injection, down to a training pipeline where a new attention variant has to compose correctly
-    with FSDP2 and pipeline parallelism.
+    with pipeline parallelism.
   </p>
 </section>
 
@@ -430,11 +430,11 @@
 
   <article class="project">
     <h3>torchtitan — Block Attention Residuals &amp; Pipeline Parallelism</h3>
-    <p class="project-meta">PyTorch · torchtitan · FSDP2 · Pipeline Parallelism · Kimi Linear · LLaVA &nbsp;·&nbsp; Apr 2026 &ndash; Present &nbsp;·&nbsp; <a href="https://github.com/QIU023/torchtitan/tree/309b462c48c5549f6f1646611ac6804f49a0d7ce" target="_blank" rel="noopener">branch 309b462 ↗</a></p>
+    <p class="project-meta">PyTorch · torchtitan · Pipeline Parallelism · Kimi Linear · LLaVA &nbsp;·&nbsp; Apr 2026 &ndash; Present &nbsp;·&nbsp; <a href="https://github.com/QIU023/torchtitan/tree/309b462c48c5549f6f1646611ac6804f49a0d7ce" target="_blank" rel="noopener">branch 309b462 ↗</a></p>
     <ul>
-      <li>Fork of PyTorch <code>torchtitan</code> implementing a <strong>Block Attention Residuals</strong> experiment composed with <strong>FSDP2 and multi-stage pipeline parallelism</strong> — PP=4 + cache adapter smoke-green on 528M / L=16 models.</li>
+      <li>Fork of PyTorch <code>torchtitan</code> implementing a <strong>Block Attention Residuals</strong> experiment composed with <strong>multi-stage pipeline parallelism</strong> — PP=4 + cache adapter smoke-green on 528M / L=16 models.</li>
       <li>Ported <strong>Kimi Linear</strong> (KDA / MLA / MLP) as the base architecture; added an <em>AttnRes</em> subclass with a scaling-law config registry; wired a <strong>PP cache adapter</strong> through Kimi Linear; and scaffolded a <strong>LLaVA-style multimodal extension</strong> on top.</li>
-      <li>Shipped a <strong>silent-grad-loss detector</strong> with clone-on-capture to surface silently-dropped gradients during distributed training; exhaustive <code>init_weights</code> paths for the FSDP2 <code>to_empty</code> flow.</li>
+      <li>Shipped a <strong>silent-grad-loss detector</strong> with clone-on-capture to surface silently-dropped gradients during distributed training.</li>
       <li>Enabled a <code>grouped_mm</code> + <code>torch.compile</code> throughput path for the Kimi Linear experiments.</li>
     </ul>
   </article>
@@ -468,7 +468,7 @@
     </div>
     <div>
       <h4>ML Training Systems &amp; Deployment</h4>
-      <p>PyTorch · torchtitan · FSDP2 · Pipeline Parallelism · LoRA · ONNX · NVIDIA DALI · llama.cpp · GGUF quantization · AWS (DynamoDB, S3, CloudWatch, CloudFront, CloudFormation)</p>
+      <p>PyTorch · torchtitan · Pipeline Parallelism · LoRA · ONNX · NVIDIA DALI · llama.cpp · GGUF quantization · AWS (DynamoDB, S3, CloudWatch, CloudFront, CloudFormation)</p>
     </div>
     <div>
       <h4>Languages</h4>
