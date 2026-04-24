@@ -4,76 +4,272 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Yiqiao Qiu — CV / ML Engineer &amp; Distributed Systems SDE</title>
-<meta name="description" content="Yiqiao Qiu — Computer Vision / Machine Learning Engineer and Distributed Systems SDE. UCSD MS CSE. Currently at AWS Networking. 7 publications, 110+ citations." />
+<meta name="description" content="Yiqiao Qiu — Computer Vision / Machine Learning Engineer and Distributed Systems SDE. UCSD MS CSE. Currently at AWS DC Networking (SIDR). 7 publications, 112 citations." />
 <link rel="stylesheet" href="styles.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
-<header class="hero">
-  <nav class="nav">
-    <a href="#top" class="nav-brand">Yiqiao Qiu</a>
-    <div class="nav-links">
-      <a href="#experience">Experience</a>
-      <a href="#publications">Publications</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </div>
+
+<button class="menu-toggle" aria-label="Toggle navigation">
+  <span></span><span></span><span></span>
+</button>
+<div class="sidebar-backdrop"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <div class="brand-name">Yiqiao Qiu <span class="brand-zh">邱奕乔</span></div>
+    <div class="brand-tagline">Computer Vision / ML Engineer<br />&amp; Distributed Systems SDE</div>
+  </div>
+
+  <nav class="sidebar-nav" aria-label="Primary">
+    <a href="#home" data-tab="home"><span class="nav-num">01</span><span class="nav-label">Home</span></a>
+    <a href="#cv" data-tab="cv"><span class="nav-num">02</span><span class="nav-label">CV &amp; Multi-Modal</span></a>
+    <a href="#distsys" data-tab="distsys"><span class="nav-num">03</span><span class="nav-label">Distributed Systems</span></a>
+    <a href="#experience" data-tab="experience"><span class="nav-num">04</span><span class="nav-label">Experience</span></a>
+    <a href="#research" data-tab="research"><span class="nav-num">05</span><span class="nav-label">Research</span></a>
   </nav>
 
-  <div class="hero-inner" id="top">
-    <h1>Yiqiao Qiu <span class="zh">邱奕乔</span></h1>
-    <p class="tagline">
-      Computer Vision / ML Engineer <span class="sep">&bull;</span> Distributed Systems SDE
-    </p>
-    <p class="sub">
-      Currently <strong>Software Engineer at AWS</strong> (Datacenter Network Infra &mdash; Scalable Intent-Driven Routing).
-      Previously <strong>Computer Vision Engineer Intern at XPeng Motors, ByteDance, and DMAI</strong>, and <strong>SDE Intern at Amazon CloudFront</strong>.
-      UCSD MS CSE, GPA 3.93. <strong>7 publications · 112 citations.</strong>
-    </p>
-
-    <div class="cta">
-      <a class="btn btn-primary" href="assets/Yiqiao_Qiu_Resume_MLE.pdf" target="_blank" rel="noopener">
-        Resume — CV / MLE <span class="arrow">↓</span>
-      </a>
-      <a class="btn btn-primary" href="assets/Yiqiao_Qiu_Resume_SDE.pdf" target="_blank" rel="noopener">
-        Resume — Distributed Systems SDE <span class="arrow">↓</span>
-      </a>
+  <div class="sidebar-footer">
+    <div class="sidebar-resumes">
+      <a href="assets/Yiqiao_Qiu_Resume_MLE.pdf" target="_blank" rel="noopener">Resume — CV / MLE ↓</a>
+      <a href="assets/Yiqiao_Qiu_Resume_SDE.pdf" target="_blank" rel="noopener">Resume — SDE ↓</a>
     </div>
-
-    <div class="links">
-      <a href="mailto:yiqiaoqiu@hotmail.com" aria-label="Email">
-        <span class="icon">✉</span> yiqiaoqiu@hotmail.com
-      </a>
-      <a href="https://www.linkedin.com/in/yiqiao-qiu-12013723a/" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <span class="icon">in</span> LinkedIn
-      </a>
-      <a href="https://scholar.google.com/citations?user=CJIt8m8AAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar">
-        <span class="icon">GS</span> Google Scholar
-      </a>
-      <a href="https://github.com/QIU023" target="_blank" rel="noopener" aria-label="GitHub">
-        <span class="icon">&lt;/&gt;</span> GitHub
-      </a>
+    <div class="sidebar-contact">
+      <a href="mailto:yiqiaoqiu@hotmail.com" aria-label="Email" title="yiqiaoqiu@hotmail.com">✉</a>
+      <a href="https://www.linkedin.com/in/yiqiao-qiu-12013723a/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">in</a>
+      <a href="https://scholar.google.com/citations?user=CJIt8m8AAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">GS</a>
+      <a href="https://github.com/QIU023" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">&lt;/&gt;</a>
     </div>
   </div>
-</header>
+</aside>
 
-<main>
+<main class="content">
 
-<section id="about" class="section">
-  <h2>About</h2>
+<!-- ============ HOME TAB ============ -->
+<section class="tab" id="tab-home">
+  <header class="hero">
+    <h1>Yiqiao Qiu <span class="zh">邱奕乔</span></h1>
+    <p class="hero-tagline">
+      Computer Vision / ML Engineer <span class="sep">&bull;</span> Distributed Systems SDE
+    </p>
+    <p class="hero-sub">
+      Currently <strong>Software Engineer at AWS</strong> (Datacenter Network Infra &mdash; Scalable Intent-Driven Routing).
+      Previously <strong>Computer Vision Engineer Intern at XPeng Motors, ByteDance, and DMAI</strong>, and
+      <strong>SDE Intern at Amazon CloudFront</strong>. UCSD MS CSE, GPA 3.93.
+      <strong>7 publications · 112 citations.</strong>
+    </p>
+    <div class="cta">
+      <a class="btn btn-primary" href="assets/Yiqiao_Qiu_Resume_MLE.pdf" target="_blank" rel="noopener">Resume — CV / MLE <span class="arrow">↓</span></a>
+      <a class="btn btn-primary" href="assets/Yiqiao_Qiu_Resume_SDE.pdf" target="_blank" rel="noopener">Resume — Distributed Systems SDE <span class="arrow">↓</span></a>
+    </div>
+  </header>
+
+  <div class="section-block">
+    <h2 class="section-title"><span class="section-num">01</span> About</h2>
+    <p class="prose">
+      My work threads together two layers of the modern AI stack. <strong>On the model layer:</strong>
+      computer-vision and multi-modal-LLM algorithm work across the full industrial lifecycle — model
+      optimization and deployment, research publications, and ML-infrastructure implementation.
+      <strong>Underneath:</strong> the massive-scale distributed networking and routing control plane running
+      AI datacenter clusters — the infrastructure powering every training and inference workload in the
+      modern AI ecosystem.
+    </p>
+  </div>
+
+  <div class="section-block">
+    <h2 class="section-title"><span class="section-num">02</span> Skills</h2>
+    <div class="skills-grid">
+      <div>
+        <h4>Machine Learning / Deep Learning</h4>
+        <p>Efficient Industrial Model Optimization · Continual Learning · Model Distillation · Transfer Learning · Supervised / Semi-Supervised · VLM LoRA fine-tuning</p>
+      </div>
+      <div>
+        <h4>Computer Vision</h4>
+        <p>Semantic Segmentation · Classification · Object Detection · Super-Resolution · Facial Landmark Detection · Scene Understanding · VQA · Anomaly Detection</p>
+      </div>
+      <div>
+        <h4>Distributed Systems &amp; Networking</h4>
+        <p>Large-scale distributed systems — CAP theorem · multi-phase commit · protocol fault tolerance · inter-node communication-cost optimization · SDN · BGP · Quagga zebra · TCP / UDP · Rust Tokio async · Rust Netlink · gRPC · Docker</p>
+      </div>
+      <div>
+        <h4>ML Training Systems &amp; Deployment</h4>
+        <p>PyTorch · torchtitan · Pipeline Parallelism · LoRA · ONNX · NVIDIA DALI · llama.cpp · GGUF quantization · AWS (DynamoDB, S3, CloudWatch, CloudFront, CloudFormation)</p>
+      </div>
+      <div>
+        <h4>Languages</h4>
+        <p>Python · Rust · C / C++ · Java · Kotlin · shell · MySQL</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h2 class="section-title"><span class="section-num">03</span> Education</h2>
+    <article class="entry">
+      <div class="entry-head">
+        <h3>University of California, San Diego</h3>
+        <span class="when">Sep 2022 &ndash; Mar 2024</span>
+      </div>
+      <p class="role">M.S. in Computer Science and Engineering · GPA 3.93 / 4.0</p>
+    </article>
+    <article class="entry">
+      <div class="entry-head">
+        <h3>Sun Yat-sen University</h3>
+        <span class="when">Sep 2018 &ndash; Jun 2022</span>
+      </div>
+      <p class="role">B.Eng. in Computer Science · Major GPA 3.94 / 4.0 (top 10%) · Overall GPA 3.8 / 4.0</p>
+    </article>
+  </div>
+
+  <div class="section-block">
+    <h2 class="section-title"><span class="section-num">04</span> Get in touch</h2>
+    <p class="prose">
+      Open to <strong>CV / ML Engineer</strong> and <strong>Distributed Systems SDE</strong> roles.
+      Best reached by email — <a href="mailto:yiqiaoqiu@hotmail.com">yiqiaoqiu@hotmail.com</a>.
+    </p>
+    <div class="links">
+      <a href="mailto:yiqiaoqiu@hotmail.com"><span class="icon">✉</span> yiqiaoqiu@hotmail.com</a>
+      <a href="https://www.linkedin.com/in/yiqiao-qiu-12013723a/" target="_blank" rel="noopener"><span class="icon">in</span> LinkedIn</a>
+      <a href="https://scholar.google.com/citations?user=CJIt8m8AAAAJ&hl=en" target="_blank" rel="noopener"><span class="icon">GS</span> Google Scholar</a>
+      <a href="https://github.com/QIU023" target="_blank" rel="noopener"><span class="icon">&lt;/&gt;</span> GitHub</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CV & MULTI-MODAL TAB ============ -->
+<section class="tab" id="tab-cv">
+  <header class="tab-header">
+    <p class="tab-num">Story I</p>
+    <h1>Computer Vision &amp; Multi-Modal</h1>
+    <p class="tab-subtitle">Algorithm · Industrial Optimization · Deployment · Infrastructure</p>
+  </header>
+
   <p class="prose">
-    My work threads together two layers of the modern AI stack. <strong>On the model layer:</strong>
-    computer-vision and multi-modal-LLM algorithm work across the full industrial lifecycle — model
-    optimization and deployment, research publications, and ML-infrastructure implementation.
-    <strong>Underneath:</strong> the massive-scale distributed networking and routing control plane running
-    AI datacenter clusters — the infrastructure powering every training and inference workload in the modern
-    AI ecosystem.
+    My ML work tells one story: <strong>take the efficient-model mindset — latency, memory, throughput —
+    from classical CV into modern VLMs and the training systems beneath them.</strong>
   </p>
 
-  <h3 class="about-subhead">Distributed systems &amp; networking infrastructure — SIDR</h3>
+  <h3 class="about-subhead">Industrial efficient-model work</h3>
+  <p class="prose">
+    Across three internships I shipped production CV models covering the core task families —
+    <strong>semantic segmentation, object detection, super-resolution, facial-landmark detection, image
+    classification, and video classification</strong> — under strict latency / compute budgets.
+  </p>
+  <ul class="prose-list">
+    <li>
+      <strong>XPeng Motors — Autonomous Driving Center.</strong>
+      <em class="stack-meta">Python, PyTorch, NVIDIA DALI, ONNX &middot; Oct 2023 – Mar 2024.</em>
+      <ul class="prose-sublist">
+        <li>
+          <em>Training-pipeline acceleration for large-scale perception models.</em> Accelerated on-car
+          perception training by integrating <strong>NVIDIA DALI</strong> for GPU-based online augmentation
+          on huge-scale image datasets, offloading preprocessing from CPU to GPU via multi-process pipelines —
+          <strong>7× training speedup and 80% CPU reduction</strong>, unblocking faster iteration across
+          perception teams.
+        </li>
+        <li>
+          <em>Multi-task backbone consolidation for on-car deployment.</em> Merged multiple task-specific
+          perception models into a unified shared backbone; systematically explored trade-offs across
+          architectures, FLOPs, and cross-task generalization. Reduced on-car model scheduling and memory
+          overhead while preserving per-task accuracy, improving deployment efficiency on resource-constrained
+          automotive compute.
+        </li>
+        <li>
+          <em>Eye-action video classification for the Driver Monitoring System (DMS).</em> Owned end-to-end
+          development of the eye-action recognition pipeline for in-cabin fatigue and distraction detection —
+          dataset construction, temporal model design and training, and in-vehicle real-scene validation under
+          varied lighting and head poses. <strong>99.64% binary classification accuracy with 30%
+          inference-latency reduction</strong>, meeting the real-time on-car constraint.
+        </li>
+        <li>
+          <em>Simulation-driven data augmentation for long-tail object detection.</em> Replenished an
+          object-detection dataset with photorealistic simulation data for rare / long-tail categories;
+          validated the pipeline by training YOLO-X on the augmented dataset and demonstrating consistent
+          mAP gains on underrepresented classes. Co-author of <em>Anything in Any Scene</em>.
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>ByteDance — Real-Time Communication, Video Group.</strong>
+      <em class="stack-meta">Python, PyTorch &middot; Nov 2021 – Apr 2022.</em>
+      <ul class="prose-sublist">
+        <li>
+          <em>Real-time multi-frame super-resolution for live-streaming codec enhancement.</em> Proposed novel
+          auxiliary modules at the low-level encoder / decoder of a real-time multi-frame super-resolution
+          model, leveraging <strong>temporal consistency across adjacent frames</strong> and
+          <strong>residual-aware feature fusion</strong> to alleviate video-decoding blocky artifacts from
+          aggressive compression — without inflating inference latency. <strong>43% PSNR gain improvement</strong>
+          in offline testing; deployed into the TikTok live-streaming RTC video engine.
+        </li>
+        <li>
+          <em>Robust facial-landmark detection for ROI-aware bitrate allocation.</em> Optimized the landmark
+          model driving ROI-based bitrate allocation on streamers' faces via (1) <strong>facial-parsing
+          preprocessing</strong> for semantic priors, (2) <strong>weighted loss with balanced resampling</strong>
+          for long-tail poses / occlusions, and (3) an <strong>auxiliary global-context branch</strong>
+          stabilizing predictions under occlusion and motion blur. <strong>67% NME reduction</strong>;
+          unstructured pruning further cut inference time by <strong>20%</strong> to fit the RTC latency budget.
+        </li>
+        <li>
+          <em>Training infrastructure.</em> Built <strong>FFmpeg-based offline augmentation</strong> simulating
+          codec artifacts, bitrate ladders, and frame-drop patterns, plus a <strong>multi-threaded concurrent
+          I/O queue</strong> hiding I/O latency behind GPU compute — <strong>40% training-time reduction</strong>
+          on large-scale video datasets.
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>DMAI — Research Center.</strong>
+      <em class="stack-meta">Python, PyTorch &middot; Jul 2021 – Oct 2021.</em>
+      Benchmarked and optimized lightweight object detectors (<strong>RFB, YOLO-X, YOLO-v5</strong>) with
+      data-augmentation search and loss tuning to suppress false positives (<strong>99.5% mAP</strong>);
+      improved classification with <strong>open-set loss</strong> to resolve <strong>95% of edge-case
+      failures at 99% precision</strong>.
+    </li>
+  </ul>
+
+  <h3 class="about-subhead">VLM — fine-tuning, token compression, on-device deployment</h3>
+  <p class="prose">
+    Distilling <strong>Qwen2.5-VL 32B → 3B</strong> with LoRA rank-16 on DriveLM-nuScenes; integrated four
+    visual-token compression methods (FasterVLM, PruMerge, PyramidDrop, and my own <strong>SATS-CRP</strong>
+    — region-aware self-attention transfer). 4× token reduction (480 → 120) with DriveLM LoRA accuracy
+    <em>+1%</em>; 16× extreme compression at only 2.4% degradation; BF16 → GGUF Q4_K_M quantization
+    (3.9× smaller) deployed on a consumer RTX 4070 Ti via llama.cpp at
+    <strong>170 tokens/s, 142 ms TTFT</strong>.
+  </p>
+
+  <h3 class="about-subhead">ML Infra — Pipeline Parallelism on torchtitan</h3>
+  <p class="prose">
+    My fork of PyTorch <code>torchtitan</code>
+    (<a href="https://github.com/QIU023/torchtitan/tree/309b462c48c5549f6f1646611ac6804f49a0d7ce" target="_blank" rel="noopener">branch 309b462</a>)
+    implements a <strong>Block Attention Residuals</strong> experiment composed with <strong>multi-stage
+    pipeline parallelism</strong> (PP=4 + cache adapter smoke-green), an AttnRes subclass with a scaling-law
+    config registry, silent-grad-loss detection with clone-on-capture, a <code>grouped_mm</code> +
+    <code>torch.compile</code> throughput path, and a <strong>LLaVA-style multimodal scaffolding</strong>
+    on top of a Kimi Linear (KDA / MLA / MLP) base.
+  </p>
+
+  <h3 class="about-subhead">Agentic RAG + LLM-agent result evaluation harness</h3>
+  <p class="prose">
+    An agentic RAG system over SQL + document corpora: LLM orchestrator delegating to specialized sub-agents
+    via OpenAI-style function calling and a typed <em>Evidence</em> protocol; async sub-agent dispatch with
+    per-agent timeouts and graceful partial-result synthesis; hybrid BM25 + dense retrieval with
+    Reciprocal Rank Fusion over ~900 chunks from 6 SEC 10-K filings; SSE streaming of routing decisions, tool
+    calls, and sub-agent reasoning. Paired with a <strong>4-mode evaluation harness</strong>
+    (fuzzy-numeric / entity-match / LLM-as-judge / deterministic slot-based component recall) that
+    specifically targets list-coverage silent failures invisible to judge-only scoring. Full-pass correctness
+    on a 10-question gold-labeled dev set.
+  </p>
+</section>
+
+<!-- ============ DISTRIBUTED SYSTEMS TAB ============ -->
+<section class="tab" id="tab-distsys">
+  <header class="tab-header">
+    <p class="tab-num">Story II</p>
+    <h1>Massive-scale Distributed Systems</h1>
+    <p class="tab-subtitle">Datacenter Cluster Networking Infrastructure · SIDR</p>
+  </header>
+
   <p class="prose">
     I currently build <strong>SIDR</strong> — AWS's <em>Scalable Intent-Driven Routing</em> protocol and the
     routing control plane for AWS Datacenter network fabrics (a production fleet of
@@ -84,6 +280,7 @@
     <strong>end-to-end ownership of SIDR release qualification</strong>, and
     <strong>production operation of the control plane</strong>.
   </p>
+
   <p class="prose">Three headline contributions:</p>
   <ol class="prose-list">
     <li>
@@ -136,167 +333,15 @@
     The foundations are <strong>CAP-theorem reasoning, multi-phase commit semantics, protocol fault tolerance,
     and inter-node communication-cost optimization inside massive fabrics</strong>.
   </p>
-
-  <h3 class="about-subhead">Computer Vision &amp; Multi-Modal LLMs — from efficient vision models to VLM infrastructure</h3>
-  <p class="prose">
-    My ML work tells one story: <strong>take the efficient-model mindset — latency, memory, throughput — from
-    classical CV into modern VLMs and the training systems beneath them.</strong>
-  </p>
-
-  <p class="prose">
-    <strong>Industrial efficient-model work.</strong> Across three internships I shipped production CV models
-    covering the core task families — <strong>semantic segmentation, object detection, super-resolution,
-    facial-landmark detection, image classification, and video classification</strong> — under strict
-    latency / compute budgets.
-  </p>
-  <ul class="prose-list">
-    <li>
-      <strong>XPeng Motors — Autonomous Driving Center.</strong>
-      <em class="stack-meta">Python, PyTorch, NVIDIA DALI, ONNX &middot; Oct 2023 – Mar 2024.</em>
-      <ul class="prose-sublist">
-        <li>
-          <em>Training-pipeline acceleration for large-scale perception models.</em> Accelerated on-car
-          perception training by integrating <strong>NVIDIA DALI</strong> for GPU-based online augmentation
-          on huge-scale image datasets, offloading preprocessing from CPU to GPU via multi-process pipelines —
-          <strong>7× training speedup and 80% CPU reduction</strong>, unblocking faster iteration across
-          perception teams.
-        </li>
-        <li>
-          <em>Multi-task backbone consolidation for on-car deployment.</em> Merged multiple task-specific
-          perception models into a unified shared backbone; systematically explored trade-offs across
-          architectures, FLOPs, and cross-task generalization. Reduced on-car model scheduling and memory
-          overhead while preserving per-task accuracy, improving deployment efficiency on resource-constrained
-          automotive compute.
-        </li>
-        <li>
-          <em>Eye-action video classification for the Driver Monitoring System (DMS).</em> Owned end-to-end
-          development of the eye-action recognition pipeline for in-cabin fatigue and distraction detection —
-          dataset construction, temporal model design and training, and in-vehicle real-scene validation
-          under varied lighting and head poses. <strong>99.64% binary classification accuracy with 30%
-          inference-latency reduction</strong>, meeting the real-time on-car constraint.
-        </li>
-        <li>
-          <em>Simulation-driven data augmentation for long-tail object detection.</em> Replenished an
-          object-detection dataset with photorealistic simulation data for rare / long-tail categories;
-          validated the pipeline by training YOLO-X on the augmented dataset and demonstrating consistent
-          mAP gains on underrepresented classes. Co-author of <em>Anything in Any Scene</em>.
-        </li>
-      </ul>
-    </li>
-    <li>
-      <strong>ByteDance — Real-Time Communication, Video Group.</strong>
-      <em class="stack-meta">Python, PyTorch &middot; Nov 2021 – Apr 2022.</em>
-      <ul class="prose-sublist">
-        <li>
-          <em>Real-time multi-frame super-resolution for live-streaming codec enhancement.</em> Proposed novel
-          auxiliary modules at the low-level encoder / decoder of a real-time multi-frame super-resolution
-          model, leveraging <strong>temporal consistency across adjacent frames</strong> and
-          <strong>residual-aware feature fusion</strong> to alleviate video-decoding blocky artifacts from
-          aggressive compression — without inflating inference latency. <strong>43% PSNR gain improvement</strong>
-          in offline testing; deployed into the TikTok live-streaming RTC video engine.
-        </li>
-        <li>
-          <em>Robust facial-landmark detection for ROI-aware bitrate allocation.</em> Optimized the landmark
-          model driving ROI-based bitrate allocation on streamers' faces via (1) <strong>facial-parsing
-          preprocessing</strong> for semantic priors, (2) <strong>weighted loss with balanced resampling</strong>
-          for long-tail poses / occlusions, and (3) an <strong>auxiliary global-context branch</strong>
-          stabilizing predictions under occlusion and motion blur. <strong>67% NME reduction</strong>;
-          unstructured pruning further cut inference time by <strong>20%</strong> to fit the RTC latency budget.
-        </li>
-        <li>
-          <em>Training infrastructure.</em> Built <strong>FFmpeg-based offline augmentation</strong> simulating
-          codec artifacts, bitrate ladders, and frame-drop patterns, plus a <strong>multi-threaded concurrent
-          I/O queue</strong> hiding I/O latency behind GPU compute — <strong>40% training-time reduction</strong>
-          on large-scale video datasets.
-        </li>
-      </ul>
-    </li>
-    <li>
-      <strong>DMAI — Research Center.</strong>
-      <em class="stack-meta">Python, PyTorch &middot; Jul 2021 – Oct 2021.</em>
-      Benchmarked and optimized lightweight object detectors (<strong>RFB, YOLO-X, YOLO-v5</strong>) with
-      data-augmentation search and loss tuning to suppress false positives (<strong>99.5% mAP</strong>);
-      improved classification with <strong>open-set loss</strong> to resolve <strong>95% of edge-case
-      failures at 99% precision</strong>.
-    </li>
-  </ul>
-
-  <p class="prose">
-    <strong>Research.</strong> <strong>7 publications · 112 citations</strong>, spanning
-    <strong>semantic segmentation, knowledge-distillation-based continual learning, classification,
-    out-of-distribution detection, and transfer learning</strong>. Selected top-cited contributions:
-  </p>
-  <ul class="prose-list">
-    <li>
-      <em>SATS: Self-Attention Transfer for Continual Semantic Segmentation.</em> 1st author.
-      <em>Pattern Recognition</em>, 2023 · <span class="cite">53 citations</span>.
-      Continual semantic segmentation suffers from catastrophic forgetting when a model is incrementally
-      trained on new classes while retaining old ones. SATS introduces a lightweight <strong>self-attention
-      transfer</strong> scheme that distills the <strong>inter-patch relationship structure</strong> from
-      the old model's self-attention maps to the new model during incremental steps — transferring <em>how</em>
-      the visual encoder attends between patches, not just what features it produces. The technique is a
-      plug-in for any vision-transformer-based backbone, sets state of the art on standard continual-segmentation
-      benchmarks, and is the method I'm now extending from CNN-era continual segmentation into modern VLM
-      distillation.
-    </li>
-    <li>
-      <em>Classifier-head Informed Feature Masking and Prototype-based Logit Smoothing for Out-of-Distribution
-      Detection.</em> 2nd author. <em>IEEE TCSVT</em>, 2024 · <span class="cite">23 citations</span>.
-      Post-hoc OOD detection combining <strong>classifier-head-informed feature masking</strong>
-      (classifier-head weights mask activations not tied to any in-distribution class) with
-      <strong>prototype-based logit smoothing</strong> (class prototypes regularize logits for off-manifold
-      samples).
-    </li>
-    <li>
-      <em>Topic Driven Adaptive Network for Cross-Domain Sentiment Classification (TDAN).</em> 2nd author.
-      <em>Information Processing and Management</em>, 2023 · <span class="cite">23 citations</span>.
-      Cross-domain sentiment classification via a <strong>neural topic model</strong> plus a
-      <strong>keyword branch</strong>, fused by <strong>cross dot-product attention</strong> between topic
-      and keyword representations — grounding predictions in keyword-occurrence signals that transfer across
-      source and target domains.
-    </li>
-  </ul>
-
-  <p class="prose">
-    <strong>VLM — fine-tuning, token compression, on-device deployment.</strong> Distilling
-    <strong>Qwen2.5-VL 32B → 3B</strong> with LoRA rank-16 on DriveLM-nuScenes; integrated four visual-token
-    compression methods (FasterVLM, PruMerge, PyramidDrop, and my own <strong>SATS-CRP</strong> — region-aware
-    self-attention transfer). 4× token reduction (480 → 120) with DriveLM LoRA accuracy <em>+1%</em>;
-    16× extreme compression at only 2.4% degradation; BF16 → GGUF Q4_K_M quantization (3.9× smaller) deployed
-    on a consumer RTX 4070 Ti via llama.cpp at <strong>170 tokens/s, 142 ms TTFT</strong>.
-  </p>
-
-  <p class="prose">
-    <strong>ML Infra — Pipeline Parallelism on torchtitan.</strong> My fork of PyTorch
-    <code>torchtitan</code> (<a href="https://github.com/QIU023/torchtitan/tree/309b462c48c5549f6f1646611ac6804f49a0d7ce" target="_blank" rel="noopener">branch 309b462</a>)
-    implements a <strong>Block Attention Residuals</strong> experiment composed with <strong>multi-stage
-    pipeline parallelism</strong> (PP=4 + cache adapter smoke-green), an AttnRes subclass with a scaling-law
-    config registry, silent-grad-loss detection with clone-on-capture, a <code>grouped_mm</code> +
-    <code>torch.compile</code> throughput path, and a <strong>LLaVA-style multimodal scaffolding</strong>
-    on top of a Kimi Linear (KDA / MLA / MLP) base.
-  </p>
-
-  <p class="prose">
-    <strong>Agentic RAG + LLM-agent result evaluation harness.</strong> An agentic RAG system over SQL +
-    document corpora: LLM orchestrator delegating to specialized sub-agents via OpenAI-style function calling
-    and a typed <em>Evidence</em> protocol; async sub-agent dispatch with per-agent timeouts and graceful
-    partial-result synthesis; hybrid BM25 + dense retrieval with Reciprocal Rank Fusion over ~900 chunks from
-    6 SEC 10-K filings; SSE streaming of routing decisions, tool calls, and sub-agent reasoning. Paired with
-    a <strong>4-mode evaluation harness</strong> (fuzzy-numeric / entity-match / LLM-as-judge / deterministic
-    slot-based component recall) that specifically targets list-coverage silent failures invisible to
-    judge-only scoring. Full-pass correctness on a 10-question gold-labeled dev set.
-  </p>
-
-  <p class="prose">
-    These two tracks converge in the obvious place: real ML systems at scale need both. I'm most effective
-    when I can move across the stack — from a chaos-tested routing control plane that finds consensus bugs
-    under fault injection, down to a training pipeline where a new attention variant has to compose correctly
-    with pipeline parallelism.
-  </p>
 </section>
 
-<section id="experience" class="section">
-  <h2>Experience</h2>
+<!-- ============ EXPERIENCE TAB ============ -->
+<section class="tab" id="tab-experience">
+  <header class="tab-header">
+    <p class="tab-num">Chronology</p>
+    <h1>Work Experience</h1>
+    <p class="tab-subtitle">Positions held, most-recent first</p>
+  </header>
 
   <article class="entry">
     <div class="entry-head">
@@ -363,50 +408,71 @@
   </article>
 </section>
 
-<section id="publications" class="section">
-  <h2>Selected Publications <span class="muted-small">&mdash; 7 papers · 112 citations</span></h2>
+<!-- ============ RESEARCH TAB ============ -->
+<section class="tab" id="tab-research">
+  <header class="tab-header">
+    <p class="tab-num">Publications</p>
+    <h1>Research</h1>
+    <p class="tab-subtitle">7 publications · 112 citations</p>
+  </header>
+
+  <p class="prose">
+    My research spans <strong>semantic segmentation, knowledge-distillation-based continual learning,
+    classification, out-of-distribution detection, and transfer learning</strong>. Core methodological
+    theme: <em>what</em> a visual encoder produces is only half the information — <em>how</em> it attends,
+    relates, and abstracts is equally transferable and equally worth distilling.
+  </p>
+
+  <h3 class="about-subhead">Selected top-cited contributions</h3>
+  <ul class="prose-list">
+    <li>
+      <em>SATS: Self-Attention Transfer for Continual Semantic Segmentation.</em> 1st author.
+      <em>Pattern Recognition</em>, 2023 · <span class="cite">53 citations</span>.
+      Continual semantic segmentation suffers from catastrophic forgetting when a model is incrementally
+      trained on new classes while retaining old ones. SATS introduces a lightweight <strong>self-attention
+      transfer</strong> scheme that distills the <strong>inter-patch relationship structure</strong> from
+      the old model's self-attention maps to the new model during incremental steps — transferring <em>how</em>
+      the visual encoder attends between patches, not just what features it produces. The technique is a
+      plug-in for any vision-transformer-based backbone, sets state of the art on standard
+      continual-segmentation benchmarks, and is the method I'm now extending from CNN-era continual
+      segmentation into modern VLM distillation.
+    </li>
+    <li>
+      <em>Classifier-head Informed Feature Masking and Prototype-based Logit Smoothing for Out-of-Distribution
+      Detection.</em> 2nd author. <em>IEEE TCSVT</em>, 2024 · <span class="cite">23 citations</span>.
+      Post-hoc OOD detection combining <strong>classifier-head-informed feature masking</strong>
+      (classifier-head weights mask activations not tied to any in-distribution class) with
+      <strong>prototype-based logit smoothing</strong> (class prototypes regularize logits for off-manifold
+      samples).
+    </li>
+    <li>
+      <em>Topic Driven Adaptive Network for Cross-Domain Sentiment Classification (TDAN).</em> 2nd author.
+      <em>Information Processing and Management</em>, 2023 · <span class="cite">23 citations</span>.
+      Cross-domain sentiment classification via a <strong>neural topic model</strong> plus a
+      <strong>keyword branch</strong>, fused by <strong>cross dot-product attention</strong> between topic
+      and keyword representations — grounding predictions in keyword-occurrence signals that transfer across
+      source and target domains.
+    </li>
+  </ul>
+
+  <h3 class="about-subhead">Other publications</h3>
   <div class="pub-grid">
-
-    <div class="pub">
-      <p class="pub-title">SATS: Self-Attention Transfer for Continual Semantic Segmentation</p>
-      <p class="pub-meta"><strong>1st author</strong> · Pattern Recognition, 2023 · <span class="cite">53 citations</span></p>
-      <p class="pub-desc">Self-attention distillation of visual patch relationships as a lightweight, plug-in technique transferable to any visual-transformer knowledge-distillation setting — state-of-the-art on continual semantic segmentation, later extended to VLM distillation.</p>
-    </div>
-
-    <div class="pub">
-      <p class="pub-title">Topic Driven Adaptive Network for Cross-Domain Sentiment Classification</p>
-      <p class="pub-meta"><strong>2nd author</strong> · Information Processing and Management, 2023 · <span class="cite">23 citations</span></p>
-      <p class="pub-desc">Reproduced four baselines for cross-domain text sentiment classification.</p>
-    </div>
-
-    <div class="pub">
-      <p class="pub-title">Classifier-head Informed Feature Masking and Prototype-based Logit Smoothing for Out-of-Distribution Detection</p>
-      <p class="pub-meta"><strong>2nd author</strong> · IEEE TCSVT, 2024 · <span class="cite">23 citations</span></p>
-      <p class="pub-desc">Cooperatively designed a novel method in visual out-of-distribution detection.</p>
-    </div>
-
     <div class="pub">
       <p class="pub-title">Anything in Any Scene: Photorealistic Video Object Insertion</p>
       <p class="pub-meta">Co-author · arXiv:2401.17509, 2024 · <span class="cite">300+ GitHub stars · 12 citations</span></p>
-      <p class="pub-desc">Photorealistic video object insertion pipeline used to replenish long-tail detection datasets with simulation data.</p>
     </div>
-
     <div class="pub">
       <p class="pub-title">Deep Model Reference: Simple Yet Effective Confidence Estimation for Image Classification</p>
       <p class="pub-meta"><strong>2nd author</strong> · MICCAI, 2024</p>
-      <p class="pub-desc">Uncertainty estimation in medical image classification.</p>
     </div>
-
     <div class="pub">
       <p class="pub-title">Class Incremental Learning with Task-Specific Batch Normalization and Out-of-Distribution Detection</p>
       <p class="pub-meta"><strong>3rd author</strong> · arXiv:2411.00430, 2024 · <span class="cite">1 citation</span></p>
     </div>
-
     <div class="pub">
       <p class="pub-title">Local Background Features Matter in Out-of-Distribution Detection</p>
       <p class="pub-meta"><strong>3rd author</strong> · arXiv:2510.12259, 2025</p>
     </div>
-
   </div>
 
   <p class="pub-cta">
@@ -414,109 +480,84 @@
   </p>
 </section>
 
-<section id="projects" class="section">
-  <h2>Projects</h2>
-
-  <article class="project">
-    <h3>Efficient Vision-Language Models: Training, Distillation, Token Compression, Deployment</h3>
-    <p class="project-meta">PyTorch · VLM · LoRA · GGUF · llama.cpp &nbsp;·&nbsp; Feb 2026 &ndash; Present</p>
-    <ul>
-      <li>Proposed <strong>region-aware self-attention distillation (SATS-CRP)</strong> for VLM knowledge distillation (Qwen2.5-VL 32B → 3B, LoRA): class-region pooled self-attention scores of visual tokens in LLM decoder layers provide a denoised inter-region distillation signal. Combined with LLaVA-KD baseline: <strong>+1% over baseline</strong> on distilled DriveLM LoRA accuracy.</li>
-      <li>Fine-tuned <strong>Qwen2.5-VL 3B with LoRA rank-16</strong> on DriveLM-nuScenes; integrated 4 visual-token compression methods (FasterVLM, PruMerge, PyramidDrop, SATS-CRP) — <strong>4× token reduction (480 → 120)</strong> with accuracy maintained or <strong>+1%</strong>.</li>
-      <li>Profiled accuracy–compression trade-off 4× – 16×; <strong>16× extreme compression (480 → 30 tokens)</strong> at only 2.4% accuracy degradation.</li>
-      <li>Quantized BF16 → <strong>GGUF Q4_K_M (3.9× smaller)</strong>; deployed on consumer RTX 4070 Ti via llama.cpp: <strong>170 tokens/s, 142 ms TTFT</strong>.</li>
-    </ul>
-  </article>
-
-  <article class="project">
-    <h3>torchtitan — Block Attention Residuals &amp; Pipeline Parallelism</h3>
-    <p class="project-meta">PyTorch · torchtitan · Pipeline Parallelism · Kimi Linear · LLaVA &nbsp;·&nbsp; Apr 2026 &ndash; Present &nbsp;·&nbsp; <a href="https://github.com/QIU023/torchtitan/tree/309b462c48c5549f6f1646611ac6804f49a0d7ce" target="_blank" rel="noopener">branch 309b462 ↗</a></p>
-    <ul>
-      <li>Fork of PyTorch <code>torchtitan</code> implementing a <strong>Block Attention Residuals</strong> experiment composed with <strong>multi-stage pipeline parallelism</strong> — PP=4 + cache adapter smoke-green on 528M / L=16 models.</li>
-      <li>Ported <strong>Kimi Linear</strong> (KDA / MLA / MLP) as the base architecture; added an <em>AttnRes</em> subclass with a scaling-law config registry; wired a <strong>PP cache adapter</strong> through Kimi Linear; and scaffolded a <strong>LLaVA-style multimodal extension</strong> on top.</li>
-      <li>Shipped a <strong>silent-grad-loss detector</strong> with clone-on-capture to surface silently-dropped gradients during distributed training.</li>
-      <li>Enabled a <code>grouped_mm</code> + <code>torch.compile</code> throughput path for the Kimi Linear experiments.</li>
-    </ul>
-  </article>
-
-  <article class="project">
-    <h3>Agentic RAG System over SQL + Document Corpora</h3>
-    <p class="project-meta">Python · LLM Function Calling · asyncio · Hybrid Retrieval (BM25 + Dense) · SSE Streaming &nbsp;·&nbsp; Apr 2026</p>
-    <ul>
-      <li>Architected an agentic RAG system: LLM orchestrator delegates to specialized SQL / document sub-agents via <strong>OpenAI-style function calling</strong> and a typed <em>Evidence</em> protocol, enabling deterministic post-hoc routing fallback without extra LLM round-trips. <strong>Full-pass correctness</strong> on a 10-question gold-labeled dev set.</li>
-      <li>Async parallel sub-agent dispatch (<code>asyncio.gather</code>) with per-agent timeouts and graceful partial-result synthesis; <strong>SSE streaming</strong> surfaces routing decisions, tool calls, and sub-agent reasoning live to the chat UI.</li>
-      <li>Hybrid retrieval combining dense embeddings + BM25 via <strong>Reciprocal Rank Fusion</strong> over ~900 chunks from 6 SEC 10-K filings, plus a metadata-only section-fetch shortcut.</li>
-      <li>4-mode evaluation harness (fuzzy-numeric · entity-match · LLM-as-judge · deterministic slot-based component recall) targeting list-coverage silent failures invisible to judge-only scoring.</li>
-    </ul>
-  </article>
-</section>
-
-<section id="skills" class="section">
-  <h2>Skills</h2>
-  <div class="skills-grid">
-    <div>
-      <h4>Machine Learning / Deep Learning</h4>
-      <p>Efficient Industrial Model Optimization · Continual Learning · Model Distillation · Transfer Learning · Supervised / Semi-Supervised · VLM LoRA fine-tuning</p>
-    </div>
-    <div>
-      <h4>Computer Vision</h4>
-      <p>Semantic Segmentation · Classification · Object Detection · Super-Resolution · Facial Landmark Detection · Scene Understanding · VQA · Anomaly Detection</p>
-    </div>
-    <div>
-      <h4>Distributed Systems &amp; Networking</h4>
-      <p>Large-scale distributed systems — CAP theorem · multi-phase commit · protocol fault tolerance · inter-node communication-cost optimization · SDN · BGP · Quagga zebra · TCP / UDP · Rust Tokio async · Rust Netlink · gRPC · Docker</p>
-    </div>
-    <div>
-      <h4>ML Training Systems &amp; Deployment</h4>
-      <p>PyTorch · torchtitan · Pipeline Parallelism · LoRA · ONNX · NVIDIA DALI · llama.cpp · GGUF quantization · AWS (DynamoDB, S3, CloudWatch, CloudFront, CloudFormation)</p>
-    </div>
-    <div>
-      <h4>Languages</h4>
-      <p>Python · Rust · C / C++ · Java · Kotlin · shell · MySQL</p>
-    </div>
-  </div>
-</section>
-
-<section id="education" class="section">
-  <h2>Education</h2>
-  <article class="entry">
-    <div class="entry-head">
-      <h3>University of California, San Diego</h3>
-      <span class="when">Sep 2022 &ndash; Mar 2024</span>
-    </div>
-    <p class="role">M.S. in Computer Science and Engineering · GPA 3.93 / 4.0</p>
-  </article>
-  <article class="entry">
-    <div class="entry-head">
-      <h3>Sun Yat-sen University</h3>
-      <span class="when">Sep 2018 &ndash; Jun 2022</span>
-    </div>
-    <p class="role">B.Eng. in Computer Science · Major GPA 3.94 / 4.0 (top 10%) · Overall GPA 3.8 / 4.0</p>
-  </article>
-</section>
-
-<section id="contact" class="section contact">
-  <h2>Get in touch</h2>
-  <p class="prose">
-    Open to <strong>CV / ML Engineer</strong> and <strong>Distributed Systems SDE</strong> roles. Best reached by email —
-    <a href="mailto:yiqiaoqiu@hotmail.com">yiqiaoqiu@hotmail.com</a>.
-  </p>
-  <div class="links">
-    <a href="mailto:yiqiaoqiu@hotmail.com"><span class="icon">✉</span> yiqiaoqiu@hotmail.com</a>
-    <a href="https://www.linkedin.com/in/yiqiao-qiu-12013723a/" target="_blank" rel="noopener"><span class="icon">in</span> LinkedIn</a>
-    <a href="https://scholar.google.com/citations?user=CJIt8m8AAAAJ&hl=en" target="_blank" rel="noopener"><span class="icon">GS</span> Google Scholar</a>
-    <a href="https://github.com/QIU023" target="_blank" rel="noopener"><span class="icon">&lt;/&gt;</span> GitHub</a>
-  </div>
-</section>
-
-</main>
-
 <footer class="footer">
   <p>&copy; <span id="year"></span> Yiqiao Qiu. Built with plain HTML/CSS.</p>
 </footer>
 
+</main>
+
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+  (function () {
+    const tabs = document.querySelectorAll('.tab');
+    const navLinks = document.querySelectorAll('.sidebar-nav a');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const backdrop = document.querySelector('.sidebar-backdrop');
+    const content = document.querySelector('.content');
+
+    function activateTab(tabId) {
+      const targetId = 'tab-' + tabId;
+      const target = document.getElementById(targetId);
+      if (!target) { activateTab('home'); return; }
+
+      tabs.forEach(function (t) { t.classList.remove('active'); });
+      navLinks.forEach(function (l) { l.classList.remove('active'); });
+
+      target.classList.add('active');
+      const activeLink = document.querySelector('.sidebar-nav a[data-tab="' + tabId + '"]');
+      if (activeLink) activeLink.classList.add('active');
+
+      window.scrollTo({ top: 0, behavior: 'auto' });
+      if (content) content.scrollTop = 0;
+
+      closeMobileSidebar();
+    }
+
+    function tabFromHash() {
+      const h = window.location.hash.replace('#', '').trim();
+      return h || 'home';
+    }
+
+    function closeMobileSidebar() {
+      sidebar.classList.remove('open');
+      backdrop.classList.remove('visible');
+      document.body.classList.remove('sidebar-open');
+    }
+
+    navLinks.forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        const tabId = link.dataset.tab;
+        if (tabId) {
+          e.preventDefault();
+          if (window.location.hash === '#' + tabId) {
+            activateTab(tabId);
+          } else {
+            window.location.hash = tabId;
+          }
+        }
+      });
+    });
+
+    window.addEventListener('hashchange', function () {
+      activateTab(tabFromHash());
+    });
+
+    if (menuToggle) {
+      menuToggle.addEventListener('click', function () {
+        const isOpen = sidebar.classList.toggle('open');
+        backdrop.classList.toggle('visible', isOpen);
+        document.body.classList.toggle('sidebar-open', isOpen);
+      });
+    }
+    if (backdrop) {
+      backdrop.addEventListener('click', closeMobileSidebar);
+    }
+
+    activateTab(tabFromHash());
+
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  })();
 </script>
 </body>
 </html>
