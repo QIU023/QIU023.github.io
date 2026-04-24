@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Yiqiao Qiu — CV / ML Engineer &amp; Distributed Systems SDE</title>
+<meta name="description" content="Yiqiao Qiu — Computer Vision / Machine Learning Engineer and Distributed Systems SDE. UCSD MS CSE. Currently at AWS Networking. 7 publications, 110+ citations." />
+<link rel="stylesheet" href="styles.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+<header class="hero">
+  <nav class="nav">
+    <a href="#top" class="nav-brand">Yiqiao Qiu</a>
+    <div class="nav-links">
+      <a href="#experience">Experience</a>
+      <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="hero-inner" id="top">
+    <h1>Yiqiao Qiu <span class="zh">邱奕乔</span></h1>
+    <p class="tagline">
+      Computer Vision / ML Engineer <span class="sep">&bull;</span> Distributed Systems SDE
+    </p>
+    <p class="sub">
+      Currently <strong>Software Engineer at AWS</strong> (DC Network Infra, SIDR). Previously at <strong>XPeng Motors</strong>, <strong>ByteDance</strong>, and <strong>Amazon CloudFront</strong>.
+      UCSD MS CSE, GPA 3.93. <strong>7 publications · 112 citations · h-index 4.</strong>
+    </p>
+
+    <div class="cta">
+      <a class="btn btn-primary" href="assets/Yiqiao_Qiu_Resume_MLE.pdf" target="_blank" rel="noopener">
+        Resume — CV / MLE <span class="arrow">↓</span>
+      </a>
+      <a class="btn btn-primary" href="assets/Yiqiao_Qiu_Resume_SDE.pdf" target="_blank" rel="noopener">
+        Resume — Distributed Systems SDE <span class="arrow">↓</span>
+      </a>
+    </div>
+
+    <div class="links">
+      <a href="mailto:yiqiaoqiu@hotmail.com" aria-label="Email">
+        <span class="icon">✉</span> yiqiaoqiu@hotmail.com
+      </a>
+      <a href="https://www.linkedin.com/in/yiqiao-qiu-12013723a/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <span class="icon">in</span> LinkedIn
+      </a>
+      <a href="https://scholar.google.com/citations?user=CJIt8m8AAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar">
+        <span class="icon">GS</span> Google Scholar
+      </a>
+      <a href="https://github.com/QIU023" target="_blank" rel="noopener" aria-label="GitHub">
+        <span class="icon">&lt;/&gt;</span> GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section id="about" class="section">
+  <h2>About</h2>
+  <p class="prose">
+    I build and ship systems across two tracks that increasingly converge: <strong>computer-vision / ML model optimization and deployment</strong>
+    (training-pipeline acceleration, model distillation, VLM compression, on-device inference), and <strong>massive-scale distributed systems</strong>
+    (routing control planes, consensus verification, concurrent workflow engines). My recent work distills Qwen2.5-VL 32B → 3B with LoRA and
+    4× visual-token compression, deployed on consumer GPU at 170 tokens/s. My day job is writing Rust/Tokio to qualify AWS datacenter network fabric releases
+    with chaos fault injection, delivering a 15× speedup.
+  </p>
+</section>
+
+<section id="experience" class="section">
+  <h2>Experience</h2>
+
+  <article class="entry">
+    <div class="entry-head">
+      <h3>Amazon Web Services <span class="muted">&mdash; Software Engineer</span></h3>
+      <span class="when">Apr 2024 &ndash; Present &nbsp;·&nbsp; Santa Clara, CA</span>
+    </div>
+    <p class="role"><em>AWS DC Network Infra — Scalable Intent-Driven Routing (SIDR)</em> · Rust, Python, Tokio</p>
+    <ul>
+      <li>Built an automated release qualification framework with <strong>hierarchical concurrent workflow orchestration</strong> and chaos fault injection (partitions, device failures, interface flaps) for AWS ML fabrics, validating consensus convergence and MPC correctness under extreme stress — <strong>15× release speedup</strong> in CI/CD.</li>
+      <li>Delivered SIDR daemon logic for <strong>cross-protocol route redistribution</strong> from Quagga: IPC, message-stream parsing, multi-module async, OS-signaling, and MPC lazy-init optimization.</li>
+      <li>Delivered SIDR protocol security enhancement — message authentication / verification with race-condition handling and end-to-end integration tests spanning controller-to-daemon intent distribution and protocol state-machine transitions.</li>
+    </ul>
+  </article>
+
+  <article class="entry">
+    <div class="entry-head">
+      <h3>XPeng Motors <span class="muted">&mdash; Computer Vision Engineer Intern</span></h3>
+      <span class="when">Oct 2023 &ndash; Mar 2024 &nbsp;·&nbsp; San Diego, CA</span>
+    </div>
+    <p class="role"><em>Autonomous Driving Center</em> · Python, PyTorch, DALI, ONNX</p>
+    <ul>
+      <li><strong>Training Pipeline Acceleration:</strong> Integrated NVIDIA DALI for GPU-based online augmentation on huge-scale image datasets, offloading preprocessing from CPU to GPU via multi-process pipelines — <strong>7× training speedup, 80% CPU reduction</strong>.</li>
+      <li><strong>Multi-task Backbone Consolidation:</strong> Merged task-specific perception models into a unified shared backbone; systematically explored FLOPs / cross-task generalization trade-offs to cut on-car scheduling and memory overhead while preserving per-task accuracy.</li>
+      <li><strong>Eye-Action Video Classification for DMS:</strong> Owned the end-to-end pipeline (dataset, temporal model, in-vehicle validation) — <strong>99.64% accuracy, 30% latency reduction</strong> under real-time on-car constraints.</li>
+      <li><strong>Simulation-Driven Long-tail Object Detection:</strong> Replenished an OD dataset with photorealistic simulation for rare categories; validated via YOLO-X showing consistent mAP gains. Co-author of <em>Anything in Any Scene</em>.</li>
+    </ul>
+  </article>
+
+  <article class="entry">
+    <div class="entry-head">
+      <h3>ByteDance <span class="muted">&mdash; Video Algorithms Engineer Intern</span></h3>
+      <span class="when">Nov 2021 &ndash; Apr 2022 &nbsp;·&nbsp; Shenzhen, China</span>
+    </div>
+    <p class="role"><em>Real-Time Communication, Video Group</em> · Python, PyTorch</p>
+    <ul>
+      <li><strong>Real-time Multi-frame Super-Resolution</strong> for TikTok live-streaming RTC: novel low-level encoder/decoder auxiliary modules leveraging temporal consistency and residual-aware fusion — <strong>43% PSNR gain improvement</strong>, shipped.</li>
+      <li><strong>Robust Facial Landmark Detection</strong> for ROI-aware bitrate allocation: facial-parsing preprocessing, weighted loss + balanced resampling for long-tail poses, global-context branch — <strong>67% NME reduction</strong>; unstructured pruning further <strong>-20% inference time</strong>.</li>
+      <li>Built FFmpeg-based offline augmentation simulating codec artifacts and a multi-threaded concurrent I/O queue hiding I/O behind GPU compute — <strong>40% training time reduction</strong>.</li>
+    </ul>
+  </article>
+
+  <article class="entry">
+    <div class="entry-head">
+      <h3>Amazon <span class="muted">&mdash; SDE Intern, AWS CloudFront</span></h3>
+      <span class="when">Jun 2023 &ndash; Sep 2023 &nbsp;·&nbsp; Seattle, WA</span>
+    </div>
+    <p class="role"><em>CloudFront Function (CF2) Tagging in Control Plane</em> · Java, Kotlin, AWS</p>
+    <ul>
+      <li>In a micro-service / distributed-transaction setting, designed unique-ID based tagging, analyzed race conditions and concurrent failures, and handled them with synchronous DB erasing calls, cleaner threads, and <strong>DynamoDB distributed locks</strong>.</li>
+      <li>Optimized 3 customer CF2 APIs — <strong>25% latency reduction</strong> by eliminating redundant RPC round-trips; shortened tagging cleaner lists for <strong>98.5% RPS reduction</strong> and <strong>60× cleaning speed</strong>.</li>
+      <li>Extended AWS CloudFormation interface for CF2 tagging with async process + callbacks + Factory pattern; comprehensive integration tests covering concurrent race-conditions.</li>
+    </ul>
+  </article>
+
+  <article class="entry">
+    <div class="entry-head">
+      <h3>DMAI <span class="muted">&mdash; Computer Vision Engineer Intern</span></h3>
+      <span class="when">Jul 2021 &ndash; Oct 2021 &nbsp;·&nbsp; Guangzhou, China</span>
+    </div>
+    <p class="role"><em>DMAI Research Center</em> · Python, PyTorch</p>
+    <ul>
+      <li>AILA Preschool Learning System card recognition: benchmarked / optimized lightweight detectors (RFB, YOLO-X, YOLO-v5) with augmentation search and loss tuning — <strong>99.5% mAP</strong>; open-set loss resolved <strong>95% edge-case failures at 99% precision</strong>.</li>
+    </ul>
+  </article>
+</section>
+
+<section id="publications" class="section">
+  <h2>Selected Publications <span class="muted-small">&mdash; 7 papers · 112 citations · h-index 4 · i10-index 4</span></h2>
+  <div class="pub-grid">
+
+    <div class="pub">
+      <p class="pub-title">SATS: Self-Attention Transfer for Continual Semantic Segmentation</p>
+      <p class="pub-meta"><strong>1st author</strong> · Pattern Recognition, 2023 · <span class="cite">53 citations</span></p>
+      <p class="pub-desc">Self-attention distillation of visual patch relationships as a lightweight, plug-in technique transferable to any visual-transformer knowledge-distillation setting — state-of-the-art on continual semantic segmentation, later extended to VLM distillation.</p>
+    </div>
+
+    <div class="pub">
+      <p class="pub-title">Topic Driven Adaptive Network for Cross-Domain Sentiment Classification</p>
+      <p class="pub-meta"><strong>2nd author</strong> · Information Processing and Management, 2023 · <span class="cite">23 citations</span></p>
+      <p class="pub-desc">Reproduced four baselines for cross-domain text sentiment classification.</p>
+    </div>
+
+    <div class="pub">
+      <p class="pub-title">Classifier-head Informed Feature Masking and Prototype-based Logit Smoothing for Out-of-Distribution Detection</p>
+      <p class="pub-meta"><strong>2nd author</strong> · IEEE TCSVT, 2024 · <span class="cite">23 citations</span></p>
+      <p class="pub-desc">Cooperatively designed a novel method in visual out-of-distribution detection.</p>
+    </div>
+
+    <div class="pub">
+      <p class="pub-title">Anything in Any Scene: Photorealistic Video Object Insertion</p>
+      <p class="pub-meta">Co-author · arXiv:2401.17509, 2024 · <span class="cite">300+ GitHub stars · 12 citations</span></p>
+      <p class="pub-desc">Photorealistic video object insertion pipeline used to replenish long-tail detection datasets with simulation data.</p>
+    </div>
+
+    <div class="pub">
+      <p class="pub-title">Deep Model Reference: Simple Yet Effective Confidence Estimation for Image Classification</p>
+      <p class="pub-meta"><strong>2nd author</strong> · MICCAI, 2024</p>
+      <p class="pub-desc">Uncertainty estimation in medical image classification.</p>
+    </div>
+
+    <div class="pub">
+      <p class="pub-title">Class Incremental Learning with Task-Specific Batch Normalization and Out-of-Distribution Detection</p>
+      <p class="pub-meta"><strong>3rd author</strong> · arXiv:2411.00430, 2024 · <span class="cite">1 citation</span></p>
+    </div>
+
+    <div class="pub">
+      <p class="pub-title">Local Background Features Matter in Out-of-Distribution Detection</p>
+      <p class="pub-meta"><strong>3rd author</strong> · arXiv:2510.12259, 2025</p>
+    </div>
+
+  </div>
+
+  <p class="pub-cta">
+    Full list on <a href="https://scholar.google.com/citations?user=CJIt8m8AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar →</a>
+  </p>
+</section>
+
+<section id="projects" class="section">
+  <h2>Projects</h2>
+
+  <article class="project">
+    <h3>Efficient Vision-Language Models: Training, Distillation, Token Compression, Deployment</h3>
+    <p class="project-meta">PyTorch · VLM · LoRA · GGUF · llama.cpp &nbsp;·&nbsp; Feb 2026 &ndash; Present</p>
+    <ul>
+      <li>Proposed <strong>region-aware self-attention distillation (SATS-CRP)</strong> for VLM knowledge distillation (Qwen2.5-VL 32B → 3B, LoRA): class-region pooled self-attention scores of visual tokens in LLM decoder layers provide a denoised inter-region distillation signal. Combined with LLaVA-KD baseline: <strong>+1% over baseline</strong> on distilled DriveLM LoRA accuracy.</li>
+      <li>Fine-tuned <strong>Qwen2.5-VL 3B with LoRA rank-16</strong> on DriveLM-nuScenes; integrated 4 visual-token compression methods (FasterVLM, PruMerge, PyramidDrop, SATS-CRP) — <strong>4× token reduction (480 → 120)</strong> with accuracy maintained or <strong>+1%</strong>.</li>
+      <li>Profiled accuracy–compression trade-off 4× – 16×; <strong>16× extreme compression (480 → 30 tokens)</strong> at only 2.4% accuracy degradation.</li>
+      <li>Quantized BF16 → <strong>GGUF Q4_K_M (3.9× smaller)</strong>; deployed on consumer RTX 4070 Ti via llama.cpp: <strong>170 tokens/s, 142 ms TTFT</strong>.</li>
+    </ul>
+  </article>
+
+  <article class="project">
+    <h3>Agentic RAG System over SQL + Document Corpora</h3>
+    <p class="project-meta">Python · LLM Function Calling · asyncio · Hybrid Retrieval (BM25 + Dense) · SSE Streaming &nbsp;·&nbsp; Apr 2026</p>
+    <ul>
+      <li>Architected an agentic RAG system: LLM orchestrator delegates to specialized SQL / document sub-agents via <strong>OpenAI-style function calling</strong> and a typed <em>Evidence</em> protocol, enabling deterministic post-hoc routing fallback without extra LLM round-trips. <strong>Full-pass correctness</strong> on a 10-question gold-labeled dev set.</li>
+      <li>Async parallel sub-agent dispatch (<code>asyncio.gather</code>) with per-agent timeouts and graceful partial-result synthesis; <strong>SSE streaming</strong> surfaces routing decisions, tool calls, and sub-agent reasoning live to the chat UI.</li>
+      <li>Hybrid retrieval combining dense embeddings + BM25 via <strong>Reciprocal Rank Fusion</strong> over ~900 chunks from 6 SEC 10-K filings, plus a metadata-only section-fetch shortcut.</li>
+      <li>4-mode evaluation harness (fuzzy-numeric · entity-match · LLM-as-judge · deterministic slot-based component recall) targeting list-coverage silent failures invisible to judge-only scoring.</li>
+    </ul>
+  </article>
+</section>
+
+<section id="skills" class="section">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div>
+      <h4>Machine Learning / Deep Learning</h4>
+      <p>Efficient Industrial Model Optimization · Continual Learning · Model Distillation · Transfer Learning · Supervised / Semi-Supervised · VLM LoRA fine-tuning</p>
+    </div>
+    <div>
+      <h4>Computer Vision</h4>
+      <p>Semantic Segmentation · Classification · Object Detection · Super-Resolution · Facial Landmark Detection · Scene Understanding · VQA · Anomaly Detection</p>
+    </div>
+    <div>
+      <h4>Distributed Systems &amp; Networking</h4>
+      <p>SDN · BGP · Quagga zebra · TCP/UDP · CAP theorem · multi-phase commit · Rust Tokio async · Rust Netlink · gRPC · Docker</p>
+    </div>
+    <div>
+      <h4>Frameworks &amp; Infra</h4>
+      <p>PyTorch · ONNX · NVIDIA DALI · llama.cpp · AWS (DynamoDB, S3, CloudWatch, CloudFront, CloudFormation) · SQL</p>
+    </div>
+    <div>
+      <h4>Languages</h4>
+      <p>Python · Rust · C / C++ · Java · Kotlin · shell · MySQL</p>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="section">
+  <h2>Education</h2>
+  <article class="entry">
+    <div class="entry-head">
+      <h3>University of California, San Diego</h3>
+      <span class="when">Sep 2022 &ndash; Mar 2024</span>
+    </div>
+    <p class="role">M.S. in Computer Science and Engineering · GPA 3.93 / 4.0</p>
+  </article>
+  <article class="entry">
+    <div class="entry-head">
+      <h3>Sun Yat-sen University</h3>
+      <span class="when">Sep 2018 &ndash; Jun 2022</span>
+    </div>
+    <p class="role">B.Eng. in Computer Science · Major GPA 3.94 / 4.0 (top 10%) · Overall GPA 3.8 / 4.0</p>
+  </article>
+</section>
+
+<section id="contact" class="section contact">
+  <h2>Get in touch</h2>
+  <p class="prose">
+    Open to <strong>CV / ML Engineer</strong> and <strong>Distributed Systems SDE</strong> roles. Best reached by email —
+    <a href="mailto:yiqiaoqiu@hotmail.com">yiqiaoqiu@hotmail.com</a>.
+  </p>
+  <div class="links">
+    <a href="mailto:yiqiaoqiu@hotmail.com"><span class="icon">✉</span> yiqiaoqiu@hotmail.com</a>
+    <a href="https://www.linkedin.com/in/yiqiao-qiu-12013723a/" target="_blank" rel="noopener"><span class="icon">in</span> LinkedIn</a>
+    <a href="https://scholar.google.com/citations?user=CJIt8m8AAAAJ&hl=en" target="_blank" rel="noopener"><span class="icon">GS</span> Google Scholar</a>
+    <a href="https://github.com/QIU023" target="_blank" rel="noopener"><span class="icon">&lt;/&gt;</span> GitHub</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>&copy; <span id="year"></span> Yiqiao Qiu. Built with plain HTML/CSS.</p>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
