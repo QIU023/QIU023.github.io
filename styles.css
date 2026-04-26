@@ -574,6 +574,9 @@ ul.prose-list > li { margin-bottom: 0.6rem; }
   font-size: 0.92rem;
   margin: 0 0 0.7rem;
   line-height: 1.55;
+  overflow: visible;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 .preview-card .preview-desc em { color: var(--text); font-style: italic; }
 .preview-card .preview-cta {
@@ -606,6 +609,8 @@ ul.prose-list > li { margin-bottom: 0.6rem; }
   color: var(--muted);
   font-size: 0.93rem;
   line-height: 1.55;
+  overflow-wrap: anywhere;
+  word-wrap: break-word;
 }
 
 /* ==================== Contact links row ==================== */
