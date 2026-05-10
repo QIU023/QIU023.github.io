@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Yiqiao Qiu — CV / ML Engineer &amp; Distributed Systems SDE</title>
-<meta name="description" content="Yiqiao Qiu — Computer Vision / Machine Learning Engineer and Distributed Systems SDE. UCSD MS CSE. Currently at AWS DC Networking (SIDR). 7 publications, 112 citations." />
+<meta name="description" content="Yiqiao Qiu — Computer Vision / Machine Learning Engineer and Distributed Systems SDE. UCSD MS CSE. Currently at AWS DC Networking (SIDR). 7 publications, 115 citations." />
 <link rel="stylesheet" href="styles.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,8 +27,9 @@
     <a href="#home" data-tab="home"><span class="nav-num">01</span><span class="nav-label">Home</span></a>
     <a href="#cv" data-tab="cv"><span class="nav-num">02</span><span class="nav-label">CV &amp; Multi-Modal</span></a>
     <a href="#distsys" data-tab="distsys"><span class="nav-num">03</span><span class="nav-label">Distributed Systems</span></a>
-    <a href="#experience" data-tab="experience"><span class="nav-num">04</span><span class="nav-label">Experience</span></a>
-    <a href="#research" data-tab="research"><span class="nav-num">05</span><span class="nav-label">Research</span></a>
+    <a href="#mlinfra" data-tab="mlinfra"><span class="nav-num">04</span><span class="nav-label">ML Infra</span></a>
+    <a href="#experience" data-tab="experience"><span class="nav-num">05</span><span class="nav-label">Experience</span></a>
+    <a href="#research" data-tab="research"><span class="nav-num">06</span><span class="nav-label">Research</span></a>
   </nav>
 
   <div class="sidebar-footer">
@@ -58,7 +59,7 @@
       Currently <strong>Software Engineer at AWS</strong> (Datacenter Network Infra &mdash; Scalable Intent-Driven Routing).
       Previously <strong>Computer Vision Engineer Intern at XPeng Motors, ByteDance, and DMAI</strong>, and
       <strong>SDE Intern at Amazon CloudFront</strong>. UCSD MS CSE, GPA 3.93.
-      <strong>7 publications · 112 citations.</strong>
+      <strong>7 publications · 115 citations.</strong>
     </p>
     <div class="cta">
       <a class="btn btn-primary" href="assets/Yiqiao_Qiu_Resume_MLE.pdf" target="_blank" rel="noopener">Resume — CV / MLE <span class="arrow">↓</span></a>
@@ -69,12 +70,13 @@
   <div class="section-block">
     <h2 class="section-title"><span class="section-num">01</span> About</h2>
     <p class="prose">
-      My work threads together two layers of the modern AI stack. <strong>On the model layer:</strong>
-      computer-vision and multi-modal-LLM algorithm work across the full industrial lifecycle — model
-      optimization and deployment, research publications, and ML-infrastructure implementation.
-      <strong>Underneath:</strong> the massive-scale distributed networking and routing control plane running
-      AI datacenter clusters — the infrastructure powering every training and inference workload in the
-      modern AI ecosystem.
+      My work threads together three layers of the modern AI stack.
+      <strong>The model layer</strong> — computer-vision and multi-modal-LLM algorithm work across the full
+      industrial lifecycle (XPeng / ByteDance / DMAI deployment, VLM distillation, 7 research papers).
+      <strong>The ML-systems layer beneath it</strong> — Block Attention Residuals on torchtitan,
+      multi-stage Pipeline Parallelism, an SGLang inference fork with Triton-fused kernels, and a
+      production-scale GRPO RLHF loop. <strong>The datacenter layer below that</strong> — the massive-scale
+      distributed networking and routing control plane (SIDR) running AWS AI training and inference clusters.
     </p>
   </div>
 
@@ -84,13 +86,19 @@
       <a class="preview-card" href="#cv">
         <p class="preview-num">Story I</p>
         <h3>Computer Vision &amp; Multi-Modal</h3>
-        <p class="preview-desc">Industrial CV at XPeng and ByteDance; 7 research papers on continual learning, distillation, and OOD; current work on VLM distillation, torchtitan Pipeline Parallelism, and Agentic RAG.</p>
+        <p class="preview-desc">Industrial CV at XPeng, ByteDance, and DMAI — segmentation, detection, super-resolution, landmark detection, video classification. 7 research papers on continual learning, distillation, and OOD. Current work: VLM distillation (Qwen2.5-VL 32B→3B) and Agentic RAG.</p>
         <p class="preview-cta">Read the full story →</p>
       </a>
       <a class="preview-card" href="#distsys">
         <p class="preview-num">Story II</p>
         <h3>Distributed Systems</h3>
         <p class="preview-desc">SIDR — AWS's Scalable Intent-Driven Routing protocol for datacenter fabrics (7,000+ switch nodes). Feature development, release-qualification ownership, and production operation of the control plane.</p>
+        <p class="preview-cta">Read the full story →</p>
+      </a>
+      <a class="preview-card" href="#mlinfra">
+        <p class="preview-num">Story III</p>
+        <h3>ML Infra</h3>
+        <p class="preview-desc">Block Attention Residuals on <code>pytorch/torchtitan</code> (RFC #3029, 220+ commits) — multi-stage Pipeline Parallelism with a novel cross-stage cache adapter, Kimi Linear (KDA + MLA + MoE) port, multimodal LLaVA scaffolding, an SGLang inference fork with a fused Triton kernel, and a 1,000-step GRPO RLHF run capturing 63K NCCL ops.</p>
         <p class="preview-cta">Read the full story →</p>
       </a>
       <a class="preview-card" href="#experience">
@@ -102,7 +110,7 @@
       <a class="preview-card" href="#research">
         <p class="preview-num">Publications</p>
         <h3>Research</h3>
-        <p class="preview-desc">7 publications · 112 citations across semantic segmentation, KD-based continual learning, classification, OOD detection, and transfer learning. 1st-author SATS paper in <em>Pattern Recognition</em>.</p>
+        <p class="preview-desc">7 publications · 115 citations across semantic segmentation, KD-based continual learning, classification, OOD detection, and transfer learning. 1st-author SATS paper in <em>Pattern Recognition</em>.</p>
         <p class="preview-cta">See publications →</p>
       </a>
     </div>
@@ -137,7 +145,7 @@
       </div>
       <div>
         <h4>ML Infrastructures &amp; Deployment</h4>
-        <p>PyTorch · torchtitan · Pipeline Parallelism · Fully Sharded Data Parallelism (FSDP) · ONNX · NVIDIA DALI · llama.cpp · GGUF quantization</p>
+        <p>PyTorch · torchtitan · Pipeline Parallelism (Interleaved1F1B + cross-stage cache adapter) · FSDP · SGLang inference · CUDA Graph · Triton kernels · GRPO / PPO RLHF · Monarch · NCCL tracing · ONNX · NVIDIA DALI · llama.cpp · GGUF quantization</p>
       </div>
       <div>
         <h4>Cloud Services</h4>
@@ -188,8 +196,10 @@
   </header>
 
   <p class="prose">
-    My ML work tells one story: <strong>take the efficient-model mindset — latency, memory, throughput —
-    from classical CV into modern VLMs and the training systems beneath them.</strong>
+    My CV / multi-modal work tells one story: <strong>take the efficient-model mindset — latency, memory,
+    throughput — from classical CV into modern VLMs and LLM-agent applications</strong>. The training-systems
+    side of the same arc — Block Attention Residuals on torchtitan, multi-stage Pipeline Parallelism, the
+    SGLang inference fork, and the GRPO RLHF loop — lives on its own page (<a href="#mlinfra">Story III · ML Infra →</a>).
   </p>
 
   <h3 class="about-subhead">Industrial efficient-model work</h3>
@@ -280,17 +290,6 @@
     <strong>170 tokens/s, 142 ms TTFT</strong>.
   </p>
 
-  <h3 class="about-subhead">ML Infra — Pipeline Parallelism on torchtitan</h3>
-  <p class="prose">
-    My fork of PyTorch <code>torchtitan</code>
-    (<a href="https://github.com/QIU023/torchtitan/tree/309b462c48c5549f6f1646611ac6804f49a0d7ce" target="_blank" rel="noopener">branch 309b462</a>)
-    implements a <strong>Block Attention Residuals</strong> experiment composed with <strong>multi-stage
-    pipeline parallelism</strong> (PP=4 + cache adapter smoke-green), an AttnRes subclass with a scaling-law
-    config registry, silent-grad-loss detection with clone-on-capture, a <code>grouped_mm</code> +
-    <code>torch.compile</code> throughput path, and a <strong>LLaVA-style multimodal scaffolding</strong>
-    on top of a Kimi Linear (KDA / MLA / MLP) base.
-  </p>
-
   <h3 class="about-subhead">Agentic RAG + LLM-agent result evaluation harness</h3>
   <p class="prose">
     An agentic RAG system over SQL + document corpora: LLM orchestrator delegating to specialized sub-agents
@@ -377,6 +376,123 @@
   </p>
 </section>
 
+<!-- ============ ML INFRA TAB ============ -->
+<section class="tab" id="tab-mlinfra">
+  <header class="tab-header">
+    <p class="tab-num">Story III</p>
+    <h1>ML Infra</h1>
+    <p class="tab-subtitle">Training · Pipeline Parallelism · Inference · RLHF</p>
+  </header>
+
+  <p class="prose">
+    My ML-systems work covers the full LLM lifecycle on a single project:
+    <strong>algorithm-architecture co-design (Block Attention Residuals)</strong> →
+    <strong>large-scale pretraining (FSDP + multi-stage Pipeline Parallelism)</strong> →
+    <strong>multimodal continued-pretrain &amp; SFT</strong> →
+    <strong>inference acceleration (SGLang fork + Triton-fused kernels + CUDA Graph)</strong> →
+    <strong>RLHF (production-scale GRPO/PPO via SGLang generation)</strong>.
+    All of it lives in
+    <a href="https://github.com/QIU023/torchtitan_attention_residual" target="_blank" rel="noopener">QIU023/torchtitan_attention_residual</a>
+    (220+ commits across 11 phases) and the companion inference fork
+    <a href="https://github.com/QIU023/sglang/tree/attention_residual_inference" target="_blank" rel="noopener">QIU023/sglang@attention_residual_inference</a>.
+    <strong>RFC filed upstream as
+    <a href="https://github.com/pytorch/torchtitan/pull/3029" target="_blank" rel="noopener">pytorch/torchtitan#3029</a>.</strong>
+  </p>
+
+  <h3 class="about-subhead">Block Attention Residuals — algorithm-architecture co-design</h3>
+  <p class="prose">
+    Independent end-to-end reproduction of <strong>Block Attention Residuals</strong> (Kimi Team,
+    arXiv:2603.15031) as a contribution to <code>pytorch/torchtitan</code>. The algorithm replaces fixed
+    residual accumulation with softmax attention over block outputs — partitioning layers into N blocks
+    (~8 recommended), running standard residuals inside blocks and firing attention-based aggregation only
+    at boundaries. <strong>Cross-stage pipeline-parallel traffic drops from O(L·d) to O(N·d)</strong>,
+    making the algorithm directly compatible with multi-stage PP — this is the load-bearing engineering
+    insight that motivated the entire project.
+  </p>
+
+  <h3 class="about-subhead">Phase 2 — Single-GPU FSDP A/B (174M dense Llama3)</h3>
+  <p class="prose">
+    Headline finding reproduces the paper's Table 1 trend; AttnRes is consistently below baseline at every
+    milestone under matched hyperparameters and architecture:
+  </p>
+  <ul class="prose-list">
+    <li><em>Step 500</em> — baseline 6.1412 vs <strong>AttnRes 6.0146 (Δ −0.1265)</strong>.</li>
+    <li><em>Step 10,000</em> — baseline 4.3235 vs <strong>AttnRes 4.2192 (Δ −0.1043)</strong>.</li>
+  </ul>
+  <p class="prose">
+    Supports the paper's ~1.25× effective-compute-gain claim. RFC evidence for upstream review.
+  </p>
+
+  <h3 class="about-subhead">Phase 3 — novel PP cross-stage cache adapter for Interleaved1F1B</h3>
+  <p class="prose">
+    The central engineering question of porting block-level attention into pipeline parallelism: AttnRes
+    aggregation at block boundaries needs the previous block's outputs, but in Interleaved1F1B those
+    outputs live on a different rank and have already moved out of the PP buffer. I designed a
+    <strong>cross-stage cache adapter</strong> that materializes block-boundary outputs into a per-rank
+    cache, replays them at the right microbatch index, and gates eviction against the schedule's commit
+    semantics. Validation on PP=4, V=2:
+  </p>
+  <ul class="prose-list">
+    <li>Naive vs. adapter loss delta within the <strong>nondeterminism band (max ~0.06)</strong>.</li>
+    <li>Memory overhead: <strong>+260 MB cache on stage-boundary ranks</strong>, zero on internal ranks.</li>
+    <li><strong>41/41 CPU unit tests passing</strong>; smoke-green on real cluster runs.</li>
+  </ul>
+
+  <h3 class="about-subhead">Phase 4 — Kimi Linear (KDA + MLA + MoE) port + AttnRes + PP</h3>
+  <p class="prose">
+    Full integration of <strong>Key-Derived Attention (KDA)</strong>, <strong>Multi-head Latent Attention
+    (MLA)</strong>, and an <strong>MoE</strong> backbone underneath the AttnRes block scheme;
+    <strong>436M FSDP architecture-validation checkpoint at 12.5k steps</strong> on C4-equivalent data
+    (explicitly framed as architecture-validation grade, ~0.35% of the paper's 119B-token budget); a
+    canonical aligned <strong>447M Kimi Linear AttnRes pretrain under FSDP=8</strong>.
+  </p>
+
+  <h3 class="about-subhead">Phase 5 / 6 — Multimodal scaffolding</h3>
+  <p class="prose">
+    A <strong>LLaVA-style projector</strong> on top of the Kimi Linear AttnRes base; FSDP=8 multimodal
+    launcher; <strong>447M aligned multimodal continued-pretrain (2,500 steps) + SFT (500 steps)</strong>
+    reusing LLaVA-Pretrain captions (overnight orchestrator simplified to drop COCO since SFT shares the
+    same caption pool); multimodal GRPO entry point with a LLaVA caption task as the bridge into Phase 11.
+  </p>
+
+  <h3 class="about-subhead">Phase 11 — SGLang inference fork</h3>
+  <p class="prose">
+    Companion fork
+    <a href="https://github.com/QIU023/sglang/tree/attention_residual_inference" target="_blank" rel="noopener">QIU023/sglang@attention_residual_inference</a>:
+    <strong>CUDA Graph integration</strong> for Kimi-Linear and Qwen3 (with cuda-graph compat fix for
+    static cleanup), real-checkpoint end-to-end inference, chunked-prefill, and a <strong>fused Phase-2
+    Triton kernel</strong> for AttnRes block aggregation. Long-context AttnRes bench includes a
+    <strong>24K-context data point</strong>. The profiling report surfaced (and fixed) a v2-bench bug
+    where the Triton kernel was never firing — the kind of silent-failure regression that judge-only
+    benchmarking misses.
+  </p>
+
+  <h3 class="about-subhead">Phase 11 / RLHF — production GRPO loop</h3>
+  <p class="prose">
+    End-to-end GRPO/PPO via SGLang generation, scaling up production runs through the fleet:
+  </p>
+  <ul class="prose-list">
+    <li><em>sum-digits production runs</em> at 50 / 200 / 500 steps demonstrating real learning under
+      <code>kl_coef=0.05</code> with a frozen reference model.</li>
+    <li><strong>1,000-step definitive run capturing 63,483 NCCL ops</strong>; 500-step run captured 51K.</li>
+    <li><strong>PolicyTrainer relaxation</strong>, <strong>lead/follower + provisioner shared-mode</strong>
+      topology, <strong>Monarch worker spawn fix</strong> (pre-import <code>torch</code> +
+      <code>torchtitan</code> in the worker before Monarch dispatches), <strong>NCCL trace wrapper</strong>
+      for fabric-level tracing, <strong>varlen_attn SDPA fallback</strong> unblock.</li>
+  </ul>
+
+  <h3 class="about-subhead">Cross-cutting infra in the fork</h3>
+  <ul class="prose-list">
+    <li><strong>Multi-stage pipeline parallelism</strong> (PP=4 with the cross-stage cache adapter).</li>
+    <li><strong>AttnRes subclass with a scaling-law config registry</strong> covering the model-size sweep.</li>
+    <li><strong>Silent-grad-loss detection with clone-on-capture</strong> — guards against the activation /
+      gradient aliasing bugs that pipeline-parallel debugging is full of.</li>
+    <li><code>grouped_mm</code> + <code>torch.compile</code> throughput path.</li>
+    <li><strong>git-LFS-backed CSV.gz NCCL traces</strong>; <strong>vast.ai env-compat patch</strong> for
+      cross-host reproducibility.</li>
+  </ul>
+</section>
+
 <!-- ============ EXPERIENCE TAB ============ -->
 <section class="tab" id="tab-experience">
   <header class="tab-header">
@@ -455,7 +571,7 @@
   <header class="tab-header">
     <p class="tab-num">Publications</p>
     <h1>Research</h1>
-    <p class="tab-subtitle">7 publications · 112 citations</p>
+    <p class="tab-subtitle">7 publications · 115 citations</p>
   </header>
 
   <p class="prose">
@@ -469,7 +585,7 @@
   <ul class="prose-list">
     <li>
       <em>SATS: Self-Attention Transfer for Continual Semantic Segmentation.</em> 1st author.
-      <em>Pattern Recognition</em>, 2023 · <span class="cite">53 citations</span>.
+      <em>Pattern Recognition</em>, 2023 · <span class="cite">55 citations</span>.
       Continual semantic segmentation suffers from catastrophic forgetting when a model is incrementally
       trained on new classes while retaining old ones. SATS introduces a lightweight <strong>self-attention
       transfer</strong> scheme that distills the <strong>inter-patch relationship structure</strong> from
@@ -501,7 +617,7 @@
   <div class="pub-grid">
     <div class="pub">
       <p class="pub-title">Anything in Any Scene: Photorealistic Video Object Insertion</p>
-      <p class="pub-meta">Co-author · <strong>Preprint</strong>, arXiv:2401.17509, 2024 · <span class="cite">300+ GitHub stars · 12 citations</span> · Presented at EI 2025 Highlights Session (IS&amp;T Electronic Imaging)</p>
+      <p class="pub-meta">Co-author · <strong>Preprint</strong>, arXiv:2401.17509, 2024 · <span class="cite">300+ GitHub stars · 13 citations</span> · Presented at EI 2025 Highlights Session (IS&amp;T Electronic Imaging)</p>
     </div>
     <div class="pub">
       <p class="pub-title">Deep Model Reference: Simple Yet Effective Confidence Estimation for Image Classification</p>
